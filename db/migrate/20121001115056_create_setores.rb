@@ -14,18 +14,17 @@ class CreateSetores < ActiveRecord::Migration
     Setor.create :nome => 'Coordenadoria de Multas' # 6
     Setor.create :nome => 'Coordenadoria de Sistema Viário' # 7
     Setor.create :nome => 'Coordenadoria de Trânsito' # 8
-    Setor.create :nome => 'Coordenadoria de Trânsito e Postura' # 9
-    Setor.create :nome => 'Coordenadoria Financeira' # 10
-    Setor.create :nome => 'Defesa da Autuação' # 11
-    Setor.create :nome => 'Diretoria Administrativa/Financeira' # 12
-    Setor.create :nome => 'Diretoria de Operações' # 13
-    Setor.create :nome => 'Diretoria de Trânsito' # 14
-    Setor.create :nome => 'Fiscalização Eletrônica' # 15
-    Setor.create :nome => 'Gerencia de Fiscalização de Postura' # 16
-    Setor.create :nome => 'Gerencia de Fiscalização de Trânsito' # 17
-    Setor.create :nome => 'Junda Admin de Recursos de Infrações' # 18
-    Setor.create :nome => 'Licitação' # 19
-    Setor.create :nome => 'Processamento de Multas' # 20
-    Setor.create :nome => 'Protocolo de Multas' # 21
+    Setor.create :nome => 'Coordenadoria Financeira' # 9
+    Setor.create :nome => 'Defesa da Autuação' # 10
+    Setor.create :nome => 'Diretoria Administrativa/Financeira' # 11
+    Setor.create :nome => 'Diretoria de Operações' # 12
+    Setor.create :nome => 'Diretoria de Trânsito' # 13
+    Setor.create :nome => 'Fiscalização Eletrônica' # 14
+    Setor.create :nome => 'Gerencia de Fiscalização de Postura' # 15
+    Setor.create :nome => 'Gerencia de Fiscalização de Trânsito' # 16
+    Setor.create :nome => 'Junda Admin de Recursos de Infrações' # 17
+    Setor.create :nome => 'Licitação' # 18
+    Setor.create :nome => 'Processamento de Multas' # 19
+    Setor.create :nome => 'Protocolo de Multas' # 20
   end
 end

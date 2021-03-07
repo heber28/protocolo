@@ -40,7 +40,7 @@ gem 'unicorn'
 
 gem 'capistrano'
 
-gem 'jquery-rails', '2.1.4'
+gem 'jquery-rails'
 
 gem 'jquery-ui-rails'
 
@@ -52,7 +52,7 @@ gem 'brcep'
 
 gem 'brcpfcnpj'
 
-gem 'rails', '3.2.22'
+gem 'rails', '3.2.22.5'
 
 gem "nested_form"
 
@@ -60,7 +60,7 @@ gem 'will_paginate', '3.0.4'
 
 #gem 'jquery-datatables-rails', '2.1.10.0.3'
 
-gem 'jquery-datatables-rails', '~> 3.4.0'
+gem 'jquery-datatables-rails'
 
 gem 'cancan'
 
@@ -90,7 +90,7 @@ end
 
 gem 'execjs'
 
-gem 'twitter-bootstrap-rails', '2.2.4'
+gem 'twitter-bootstrap-rails', '2.2.8'
 
 gem "less-rails", "~> 2.3.3"
 
