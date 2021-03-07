@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <%= form_tag sessions_path, html: {id: 'invisible-recaptcha-form'} do %>
+      <div class="field">
+        <%= label_tag "Usuário" %>
+        <%= text_field_tag :usuario, params[:usuario], :class => 'lowercase' %>
+      </div>
+      <div class="field">
+        <%= label_tag :senha %>
+        <%= password_field_tag :password %>
+      </div>
+      <div class="field">
+        <%= label_tag :Setor %>
+        <%= select_tag "setor", options_from_collection_for_select(Setor.all, "id", "nome", params[:setor]), :class => 'span4', :prompt => "Selecione seu setor" %>
+      </div>
+      <div class="actions">
+        <div class="actions"><%= submit_tag "Enviar" %></div>
+      </div>
+  <% end %>
+</div>

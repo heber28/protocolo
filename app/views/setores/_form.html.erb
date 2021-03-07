@@ -1,0 +1,13 @@
+<%= form_for @setor, :html => {:class => 'form-horizontal'} do |f| %>
+    <div class="control-group">
+      <%= f.label :nome, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :nome, :class => 'text_field string' %>
+      </div>
+    </div>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  setores_path, :class => 'btn' %>
+    </div>
+<% end %>

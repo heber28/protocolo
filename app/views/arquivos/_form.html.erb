@@ -1,0 +1,24 @@
+<%= form_for @arquivo, :html => {:multipart => true} do |f| %>
+    <% if @arquivo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@arquivo.errors.count, "erros") %> não permitiram esse arquivo ser salvo</h2>
+          <ul>
+            <% @arquivo.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <%= f.hidden_field :processo_id, :value => @arquivo.processo_id %>
+
+    <span class="label label-info">Apenas jpg, jpeg, gif, png, pdf, doc, docx, xls, xlsx</span>
+    <br />
+    <br />
+    <p>
+      <%= f.file_field :arquivo %>
+    </p>
+
+    <div class="actions">
+      <%= f.submit "Salvar" %>
+    </div>
+<% end %>

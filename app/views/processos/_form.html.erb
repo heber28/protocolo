@@ -1,0 +1,104 @@
+<%= simple_nested_form_for @processo, :html => {:class => 'form-horizontal'} do |f| %>
+  <% readonly = (can? :modify, @processo) ? false : true %>
+  <%= f.input :numero_protocolo, :label => 'Número do Protocolo', :input_html => {:readonly => readonly} %>
+ 
+  <%= f.input :nome, :input_html => {:class => 'span6'} %>
+  <div class="controls"><span id="validacao_cpf"></span></div>
+  <%= f.input :cpf %>
+  <div class="controls"><span id="validacao_cnpj"></span></div>
+  <%= f.input :cnpj %>
+
+  <div class="control-group select required processo_tag_ids">
+    <label class="select control-label" for="processo_tag_ids">
+      Tag
+    </label>
+
+    <div class="controls">
+      <% if f.object.usuario %>
+        <%= f.collection_select :tag_ids, Tag.order(:descricao), :id, :descricao, {}, {multiple: :true, class: :span6} %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if f.object.usuario %>
+    <% data = f.object.created_at ? (l f.object.created_at) : '' %>
+    <% readonly = (can? :modify, @processo) ? false : true %>
+    <%= f.input :descricao, :as => :text, :label => 'Descrição', :input_html => {:rows => 3, :class => 'span6', :readonly => readonly}, :hint => f.object.usuario.nome + ' ' + data %>
+  <% else %>
+    <%= f.input :descricao, :as => :text, :label => 'Descrição', :input_html => {:rows => 3, :class => 'span6', :readonly => true} %>
+  <% end %>
+
+  <%= f.fields_for :comentarios do |c| %>
+    <% link = c.link_to_remove('Excluir') %>
+    <% if c.object.usuario %>
+      <% d = c.object.created_at ? (l c.object.created_at) : '' %>
+      <% u = c.object.usuario.nome ? c.object.usuario.nome : '' %>
+      <% readonly = (can? :update, c.object) ? false : true %>
+    <% else %>
+      <% readonly = false %>
+      <% d = '' %>
+      <% u = '' %>
+    <% end %>
+    <% if can? :destroy, c.object %>
+      <%= c.input :descricao, :as => :text, :label => false, :input_html => {:rows => 3, :class => 'span6', :readonly => readonly}, :hint => c.link_to_remove('Excluir') + ' ' + u + ' ' + d %>
+    <% else %>
+      <%= c.input :descricao, :as => :text, :label => false, :input_html => {:rows => 3, :class => 'span6', :readonly => readonly}, :hint => u + ' ' + d %>
+    <% end %>
+  <% end %>
+  <%= f.link_to_add "Adicionar comentário", :comentarios %>
+  <br/><br/>
+
+  <%= f.fields_for :tramites do |t| %>
+    <% link = t.link_to_remove('Excluir') %>
+    <% if t.object.usuario %>
+      <% d = t.object.created_at ? (l t.object.created_at) : '' %>
+      <% u = t.object.usuario.nome %>
+      <% readonly = (can? :update, t.object) ? false : true %>
+    <% else %>
+      <% readonly = false %>
+      <% d = '' %>
+      <% u = '' %>
+    <% end %>
+
+    <% if can? :destroy, t.object %>
+      <%= t.association :setor, :label => 'Setor destino', :label_method => :nome, :value_method => :id, :include_blank => true, :input_html => {:readonly => readonly, :class => 'span5'}, :prompt => "Selecione um setor", :hint => t.link_to_remove('Excluir') + ' ' + u + ' ' + d %>
+    <% else %>
+      <%= t.association :setor, :label => 'Setor destino', :label_method => :nome, :value_method => :id, :include_blank => true, :input_html => {:readonly => readonly, :class => 'span5'}, :prompt => "Selecione um setor", :hint => u + ' ' + d %>
+    <% end %>
+  <% end %>
+  <% if current_user.administrador? %>
+    <%= f.link_to_add "Adicionar trâmite", :tramites %>
+  <% elsif @processo.tramites.size == 0 and @processo.setor_id == current_setor.id %>
+    <%= f.link_to_add "Adicionar trâmite", :tramites %>
+  <% elsif @processo.tramites.size > 0 %>
+    <% ultimo_tramite = Tramite.where("processo_id = ?", @processo.id).order("id Desc").first %>
+    <% if ultimo_tramite.nil? == false %>
+      <% if ultimo_tramite.setor_id == current_setor.id %>
+         <%= f.link_to_add "Adicionar trâmite", :tramites %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <br/><br/>
+  <%= f.fields_for :arquivos do |a| %>
+      <div class="controls">
+        <%= a.file_field :arquivo, :input_html => {:class => 'span6'} %>
+        <%= File.basename(a.object.arquivo.to_s) %>
+        <%= a.link_to_remove('Excluir') %>
+      </div>
+  <% end %>
+  <%= f.link_to_add "Adicionar arquivo", :arquivos %>
+
+  <script>
+      $('body').on('focus', 'input.datepicker', function () {
+          $(this).datepicker();
+      });
+      $('body').on('focus', 'input.time', function () {
+          $(this).mask('99:99');
+      });
+  </script>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), processos_path, :class => 'btn' %>
+  </div>
+<% end %>

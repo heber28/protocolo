@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cmtu</title>
+  <!--[if lt IE 9]>
+      <%= javascript_include_tag "html5" %>
+    <![endif]-->
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="http://cmtu.londrina.pr.gov.br"><%= image_tag("logo.png") %></a>
+      <ul class="nav">
+        <% if current_user %>
+          <li class="<%= 'active' if params[:controller] == 'processos' %>"><%= link_to "Processos", processos_path(:setor_id => current_setor.id) %></li>
+          <li class="<%= 'active' if params[:controller] == 'tramites' %>"><%= link_to "Remessa", remessa_path %></li>
+          <% if current_user.administrador %>
+            <li class="dropdown <%= 'active' if params[:controller] == 'usuarios' or params[:controller] == 'tags' %>">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros
+                <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <% if current_user.administrador %>
+                  <li><%= link_to "Usuários", usuarios_path %></li>
+                  <li><%= link_to "Tags", tags_path %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+        <% else %>
+          <li id="pesquisa_processos"><%= link_to "Pesquisa de Processos", pesquisar_path %></li>
+        <% end %>
+      </ul>
+      <p class="navbar-text pull-right no-print">
+        <% if current_user %>
+          <%= link_to current_user.nome, edit_usuario_path(current_user) %> |
+          <%= link_to "Log Out", logout_path %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <% flash.each do |name, msg| %>
+    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+      <button class="close" data-dismiss="alert" type="button">x</button>
+      <%= msg %>
+    </div>
+  <% end %>
+  <%= yield %>
+</div>
+</body>
+</html>

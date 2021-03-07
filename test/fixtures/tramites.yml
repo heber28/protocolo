@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  processo_id: 1
+  setor_id: 1
+  usuario_id: 1
+
+two:
+  processo_id: 1
+  setor_id: 1
+  usuario_id: 1

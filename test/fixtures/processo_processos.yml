@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  processo_id: 1
+  processo_id_vinculado: 1
+
+two:
+  processo_id: 1
+  processo_id_vinculado: 1

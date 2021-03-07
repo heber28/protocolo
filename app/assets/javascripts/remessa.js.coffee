@@ -1,0 +1,2 @@
+jQuery ->
+  $('.datetimepicker').datetimepicker()

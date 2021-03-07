@@ -1,0 +1,59 @@
+<%- model_class = Processo -%>
+<h1>Pesquisa de Processos</h1>
+<br/>
+
+<form>
+  <div class="well">
+    <div class="row">
+      <div class="span1">CPF</div>
+      <div class="span3"><%= text_field_tag :cpf, params[:cpf], :id => 'cpf', :class => 'span3' %></div>
+      &nbsp;&nbsp;
+      <button type="submit" class="btn btn-primary">Pesquisar</button>    
+    </div>
+    <div class="row">  
+      <div class="span1">CNPJ</div>
+      <div class="span3"><%= text_field_tag :cnpj, params[:cnpj], :id => 'cnpj', :class => 'span3' %></div>
+    </div>
+    <div class="row">
+      <div class="span1">Protocolo</div>
+      <div class="span3"><%= text_field_tag :numero_protocolo, params[:numero_protocolo], :class => 'span3' %></div>
+    </div>
+   </div> 
+</form>
+<table class="table table-striped table-condensed">
+  <thead>
+  <tr>
+    <th style="width:50px">Id</th>
+    <th style="width:80px">Protocolo</th>
+    <th style="width:80px">Data</th>
+    <th style="width:450px">Processo</th>
+    <th style="width:180px">Setor</th>
+    <th><%= t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @processos.each do |processo| %>
+      <tr>
+        <td style="width:50px"><%= processo.id %></td>
+        <td style="width:80px"><%= processo.numero_protocolo %></td>
+        <td style="width:80px"><%= l processo.created_at, :format => :short %></td>
+        <td style="width:450px"><%= processo.descricao %></td>
+        <td style="width:180px"><%= processo.setor.nome %></td>
+        <td>
+          <% if can? :edit, processo %>
+              <%= link_to "Ver", processo_path(processo), :class => 'btn btn-mini' %>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")), edit_processo_path(processo), :class => 'btn btn-mini' %>
+              <% if can? :destroy, processo %>
+                  <%= link_to t('.destroy', :default => t("helpers.links.destroy")), processo_path(processo),
+                              :method => :delete,
+                              :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Você tem certeza?'))},
+                              :class => 'btn btn-mini btn-danger' %>
+              <% end %>
+          <% else %>
+              <%= link_to "Ver", visualizar_path(:processo_id => processo.id), :class => 'btn btn-mini' %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

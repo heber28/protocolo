@@ -1,0 +1,112 @@
+<%- model_class = Processo -%>
+<div class="page-header">
+  <h1>Processos</h1>
+</div>
+</h1>
+<form>  
+  <div class="well">
+    <div class="row">
+      <div class="span1">
+        Setor
+      </div>
+      <div class="span4">
+        <%= select_tag :setor_id, options_for_select(Setor.all.collect {|s| [s.nome, s.id]}, params[:setor_id]), :include_blank => true, :class => 'span4' %>
+      </div>
+      <div class="span1">
+        CPF
+      </div>
+      <div class="span4">
+        <%= text_field_tag :cpf, params[:cpf], :class => 'span4 text_field cpf' %>
+      </div>
+      &nbsp;
+      <button type="submit" class="btn btn-primary">Pesquisar</button>
+    </div>
+    <div class="row">
+      <div class="span1">
+        Protocolo
+      </div>
+      <div class="span4">
+        <%= text_field_tag :numero_protocolo, params[:numero_protocolo], :class => 'span4' %>
+      </div>
+      <div class="span1">
+        CNPJ
+      </div>
+      <div class="span4">
+        <%= text_field_tag :cnpj, params[:cnpj], :class => 'span4 text_field cnpj' %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span1">
+        Descrição
+      </div>
+      <div class="span4">
+        <%= text_field_tag :descricao, params[:descricao], :class => 'span4' %>
+      </div>
+      <div class="span1">
+        Tag
+      </div>
+      <div class="span4">
+        <%= select_tag :tag_id, options_for_select(Tag.all.collect {|r| [r.descricao, r.id]}, params[:tag_id]), :include_blank => true, :class => 'span4' %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span1">
+        Criação
+      </div>
+      <div class="span4">
+        <%= text_field_tag :dt_cini, params[:dt_cini], :class => 'span2 datepicker' %>&nbsp;...&nbsp;
+        <%= text_field_tag :dt_cfim, params[:dt_cfim], :class => 'span2 datepicker' %>
+      </div>
+      <div class="span1">
+        Trâmite
+      </div>
+      <div class="span4">
+        <%= text_field_tag :dt_tini, params[:dt_tini], :class => 'span2 datepicker' %>&nbsp;...&nbsp;
+        <%= text_field_tag :dt_tfim, params[:dt_tfim], :class => 'span2 datepicker' %>
+      </div>
+    </div>
+  </div>
+</form>
+
+<table class="table table-striped table-condensed">
+  <thead>
+  <tr>
+    <th style="width:20px">Protocolo</th>
+    <th style="width:20px">Nome</th>
+    <th style="width:80px">Trâmite</th>
+    <th style="width:500px">Descrição</th>
+    <th>Setor</th>
+    <th style="width:100px"><%= t '.actions', :default => t("helpers.actions") %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @processos.each do |processo| %>
+    <tr>
+      <td style="width:30px"><%= link_to processo.numero_protocolo.to_s, processo_path(processo) %></td>
+      <td style="width:100px"><%= processo.nome %>
+      <td style="width:80px"><%= l processo.created_at, :format => :short %></td>
+      <td style="width:500px"><%= processo.descricao %></td>
+      <td><%= Setor.find(processo.setor_id_atual).nome %></td>
+      <td style="width:140px">
+        <%= link_to 'Ver', processo_path(processo), :class => 'btn btn-mini' %>
+        <%= link_to 'Editar', edit_processo_path(processo), :class => 'btn btn-mini' %>
+        <% if can? :destroy, processo %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      processo_path(processo),
+                      :method => :delete,
+                      :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Você tem certeza?'))},
+                      :class => 'btn btn-mini btn-danger' %>
+        <% else %>
+          <button type="button" disabled class="btn btn-mini">Excluir</button>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<p><%= will_paginate @processos, :previous_label => "Anterior", :next_label => "Próximo" %></p>
+
+<% if can? :create, Processo %>
+  <%= link_to 'Novo', new_processo_path, :class => 'btn' %>
+<% end %>

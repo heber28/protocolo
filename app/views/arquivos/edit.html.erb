@@ -1,0 +1,6 @@
+<h1>Editando arquivo</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Visualizar', @arquivo %> |
+<%= link_to 'Voltar', arquivos_path(:processo_id => @arquivo.processo_id), :class => 'btn' %>

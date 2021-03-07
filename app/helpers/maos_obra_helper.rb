@@ -1,0 +1,2 @@
+module MaosObraHelper
+end

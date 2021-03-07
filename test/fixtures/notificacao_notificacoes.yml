@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  notificacao_id: 1
+  notificacao_id_vinculado: 1
+
+two:
+  notificacao_id: 1
+  notificacao_id_vinculado: 1

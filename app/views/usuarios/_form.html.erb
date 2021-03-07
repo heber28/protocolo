@@ -1,0 +1,25 @@
+<%= simple_nested_form_for @usuario, :html => {:class => 'form-horizontal'} do |f| %>
+    <% if current_user.administrador %>
+        <%= f.input :nome, :input_html => {:class => ''} %>
+        <%= f.input :login, :input_html => {:class => 'lowercase'}, :hint => 'Preencha o nome.sobrenome' %>
+    <% end %>
+    <%= f.input :password, :label => 'Senha', :hint => 'É necessário ter no mínimo 6 caracteres, incluir pelo menos uma letra minúscula, uma letra maiúscula e um número' %>
+    <%= f.input :password_confirmation, :label => 'Confirmação da senha' %>
+    <% if current_user.administrador %>
+        <%= f.input :administrador, :hint => 'Pode criar Usuários e Setores. Pode também alterar o que foi feito pelos outros usuários' %>
+        <%= f.input :autor, :hint => 'Pode criar Processos' %>
+        <%= f.input :pode_alterar_setor, :label => 'Altera o Setor', :hint => 'Pode Alterar o Setor de Criação do Processo' %>
+        <%= f.input :desativado %>
+        <legend>Setores</legend>
+        <%= f.fields_for :usuario_setores do |us| %>
+            <% link = (can? :destroy, us.object) ? us.link_to_remove('Excluir') : '' %>
+            <%= us.association :setor, :collection => Setor.all.collect { |s| [s.nome, s.id] }, :input_html => {:class => "span5"}, :prompt => "Selecione um setor", :hint => link %>
+        <% end %>
+        <%= f.link_to_add "Adicionar Setor", :usuario_setores %>
+    <% end %>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  usuarios_path, :class => 'btn' %>
+    </div>
+<% end %>

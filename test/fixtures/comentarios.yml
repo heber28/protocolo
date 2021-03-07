@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descricao: MyString
+  processo_id: 1
+  usuario_id: 1
+
+two:
+  descricao: MyString
+  processo_id: 1
+  usuario_id: 1

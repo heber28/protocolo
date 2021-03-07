@@ -1,0 +1,32 @@
+<%- model_class = Processo -%>
+<div class="page-header">
+  <h1>Processo</h1>
+</div>
+
+<dl class="dl-horizontal group">
+
+  <dt><strong>Pessoa:</strong></dt>
+  <dd><%= @processo.nome %></dd>
+
+  <dt><strong>Tag:</strong></dt>
+  <% @processo.tags.each do |tag| %>
+      <dd><%= tag.descricao %></dd>
+  <% end %>
+
+  <dt><strong>Descrição:</strong></dt>
+  <dd><%= @processo.descricao %></dd>
+
+  <% @historico.each do |historico| %>
+      <% if historico.has_attribute?(:setor_id) %>
+          <dt><strong>Localização:</strong></dt>
+          <dd><%= historico.setor.nome + ' em ' + (l historico.created_at) %>
+      <% else %>
+          <dt><strong>Comentário:</strong></dt>
+          <dd><%= historico.descricao + ' em ' + (l historico.created_at) %>
+      <% end %>
+  <% end %>
+</dl>
+
+<div class="form-actions">
+  <%= link_to_function "Voltar", "history.back()", :class => "btn" %>
+</div>

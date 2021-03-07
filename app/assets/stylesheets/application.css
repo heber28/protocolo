@@ -1,0 +1,204 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require chosen
+ *= require dataTables/bootstrap/2/jquery.dataTables.bootstrap
+ *= require_tree .
+ *= require dataTables/jquery.dataTables
+ */
+
+/*
+ *= require jquery.ui.all
+ */
+
+.dl-horizontal > dd:after {
+   display: table;
+   content: "";
+   clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.hide-text {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.input-block-level {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.hero-unit {
+    padding: 60px;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 30px;
+    color: inherit;
+    background-color: #eeeeee;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.hero-unit h1 {
+    margin-bottom: 0;
+    font-size: 60px;
+    line-height: 1;
+    color: inherit;
+    letter-spacing: -1px;
+}
+
+.hero-unit li {
+    line-height: 30px;
+}
+
+.media, .media-body {
+    overflow: hidden;
+    *overflow: visible;
+    zoom: 1;
+}
+
+.media, .media .media {
+    margin-top: 15px;
+}
+
+.media:first-child {
+    margin-top: 0;
+}
+
+.media-object {
+    display: block;
+}
+
+.media-heading {
+    margin: 0 0 5px;
+}
+
+.media .pull-left {
+    margin-right: 10px;
+}
+
+.media .pull-right {
+    margin-left: 10px;
+}
+
+.media-list {
+    margin-left: 0;
+    list-style: none;
+}
+
+.group:before, .group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    zoom: 1; /* IE6&7 */
+}
+
+dd {
+    min-height: 20px; /* should be the same as line-height */
+}
+
+@media all {
+    .print {
+        display: none;
+    }
+}
+
+@media print {
+    body {
+        background-color: #FFFFFF;
+        background-image: none;
+        color: #000000
+    }
+
+    .form-actions {
+        display: none;
+    }
+
+    .help-inline {
+        display: none;
+    }
+
+    .page-break {
+        display: block;
+        page-break-before: always;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .navbar-inner {
+        display: none;
+    }
+
+    .breadcrumb {
+        display: none;
+    }
+
+    .delete {
+        display: none;
+    }
+
+    .print {
+        display: block;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    .table-image {
+        display: none;
+    }
+
+    .btn.btn-mini {
+        display: none;
+    }
+
+    .btn.btn-primary {
+        display: none;
+    }
+
+    .alert {
+        display: none;
+    }
+
+}
+
+

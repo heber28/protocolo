@@ -1,0 +1,44 @@
+<%- model_class = Usuario -%>
+<div class="page-header">
+  <h1>Usuário</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nome) %>:</strong></dt>
+  <dd><%= @usuario.nome %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:login) %>:</strong></dt>
+  <dd><%= @usuario.login %></dd>
+  <% if current_user.administrador %>
+      <dt><strong><%= model_class.human_attribute_name(:administrador) %>:</strong></dt>
+      <dd><%= @usuario.administrador ? 'Sim' : 'Não' %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:autor) %>:</strong></dt>
+      <dd><%= @usuario.autor ? 'Sim' : 'Não' %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:pode_alterar_setor) %>:</strong></dt>
+      <dd><%= @usuario.desativado ? 'Sim' : 'Não' %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:desativado) %>:</strong></dt>
+      <dd><%= @usuario.desativado ? 'Sim' : 'Não' %></dd>
+  <% end %>
+  <% @usuario.usuario_setores.each do |us| %>
+      <dt><strong>Setor:</strong></dt>
+      <dd><%= us.setor.try(:nome) %></dd>
+  <% end %>
+</dl>
+
+<div class="form-actions">
+  <% if current_user.administrador %>
+      <%= link_to t('.back', :default => t("helpers.links.back")),
+                  usuarios_path, :class => 'btn' %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_usuario_path(@usuario), :class => 'btn' %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  usuario_path(@usuario),
+                  :method => 'delete',
+                  :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Você tem certeza?'))},
+                  :class => 'btn btn-danger' %>
+  <% else %>
+      <%= link_to t('.back', :default => t("helpers.links.back")),
+                  processos_path, :class => 'btn' %>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_usuario_path(@usuario), :class => 'btn' %>
+  <% end %>
+</div>

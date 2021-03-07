@@ -1,0 +1,8 @@
+<h1>Listando os arquivos</h1>
+<%= render @arquivos %>
+<br/>
+<div class="clear"></div>
+<p>
+  <%= link_to "Adicionar um Arquivo", new_arquivo_path(:processo_id => params[:processo_id]) %> |
+  <%= link_to "Voltar", processo_path(params[:processo_id]) %>
+</p>
