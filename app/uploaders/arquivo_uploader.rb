@@ -40,7 +40,8 @@ class ArquivoUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-  process :read_dimensions
+  #process :read_dimensions
+  #process :extract_dimensions
   # Create different versions of your uploaded files:
   version :thumb do
     #process :scale => [50, 50]

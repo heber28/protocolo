@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem "localeapp" 
+
 gem 'nokogiri', '1.9.1'
 
 gem 'rake', '12.3.2'
@@ -116,5 +118,5 @@ gem "simple_form"
 #gem 'graylog2_exceptions', :git => 'git://github.com/wr0ngway/graylog2_exceptions.git'
 #gem 'graylog2-resque'
 #gem 'libv8', '~> 3.11.8'
-gem 'wicked_pdf', '1.1.0'
+gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'

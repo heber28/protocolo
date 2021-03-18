@@ -48,13 +48,13 @@ ActiveRecord::Schema.define(:version => 20140725171551) do
     t.integer  "usuario_id"
     t.integer  "setor_id"
     t.integer  "setor_id_atual"
-    t.integer  "numero_protocolo"
+    t.integer  "numero_git"
     t.string   "nome"
     t.string   "cpf"
     t.string   "cnpj"
     t.datetime "data_tramite"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   add_index "processos", ["setor_id"], :name => "index_processos_on_setor_id"

@@ -15,8 +15,8 @@
       <div class="span3"><%= text_field_tag :cnpj, params[:cnpj], :id => 'cnpj', :class => 'span3' %></div>
     </div>
     <div class="row">
-      <div class="span1">Protocolo</div>
-      <div class="span3"><%= text_field_tag :numero_protocolo, params[:numero_protocolo], :class => 'span3' %></div>
+      <div class="span1">Git</div>
+      <div class="span3"><%= text_field_tag :numero_git, params[:numero_git], :class => 'span3' %></div>
     </div>
    </div> 
 </form>
@@ -24,7 +24,7 @@
   <thead>
   <tr>
     <th style="width:50px">Id</th>
-    <th style="width:80px">Protocolo</th>
+    <th style="width:80px">Git</th>
     <th style="width:80px">Data</th>
     <th style="width:450px">Processo</th>
     <th style="width:180px">Setor</th>
@@ -35,7 +35,7 @@
   <% @processos.each do |processo| %>
       <tr>
         <td style="width:50px"><%= processo.id %></td>
-        <td style="width:80px"><%= processo.numero_protocolo %></td>
+        <td style="width:80px"><%= processo.numero_git %></td>
         <td style="width:80px"><%= l processo.created_at, :format => :short %></td>
         <td style="width:450px"><%= processo.descricao %></td>
         <td style="width:180px"><%= processo.setor.nome %></td>

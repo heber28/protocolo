@@ -23,10 +23,10 @@
     </div>
     <div class="row">
       <div class="span1">
-        Protocolo
+        Git
       </div>
       <div class="span4">
-        <%= text_field_tag :numero_protocolo, params[:numero_protocolo], :class => 'span4' %>
+        <%= text_field_tag :numero_git, params[:numero_git], :class => 'span4' %>
       </div>
       <div class="span1">
         CNPJ
@@ -72,7 +72,7 @@
 <table class="table table-striped table-condensed">
   <thead>
   <tr>
-    <th style="width:20px">Protocolo</th>
+    <th style="width:20px">Git</th>
     <th style="width:20px">Nome</th>
     <th style="width:80px">Trâmite</th>
     <th style="width:500px">Descrição</th>
@@ -83,7 +83,7 @@
   <tbody>
   <% @processos.each do |processo| %>
     <tr>
-      <td style="width:30px"><%= link_to processo.numero_protocolo.to_s, processo_path(processo) %></td>
+      <td style="width:30px"><%= link_to processo.numero_git.to_s, processo_path(processo) %></td>
       <td style="width:100px"><%= processo.nome %>
       <td style="width:80px"><%= l processo.created_at, :format => :short %></td>
       <td style="width:500px"><%= processo.descricao %></td>

@@ -113,5 +113,11 @@ class TramitesController < ApplicationController
         @remessas = Tramite.where("processo_id is not null and date(created_at) = ? and setor_id_anterior = ?", data, @setor_id).order(:setor_id)
       end
     end
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "remessa"  
+      end
+    end
   end
 end

@@ -6,9 +6,11 @@
     <%= select_tag :setor_id, options_for_select(Setor.all.collect { |s| [s.nome, s.id] }, @setor_id), :include_blank => true, :class => 'span5' %>
     <%= text_field_tag :datetimepicker, (params[:datetimepicker] or (Time.now.strftime('%d/%m/%Y 00:00'))), :class => 'span2' %>
     <button type="submit" class="btn icon-search"></button>
-    <button class="btn icon-print"></button>
+    <%= link_to "", remessa_path(request.query_parameters.merge({:setor_id => params[:setor_id], :datetimepicker => params[:datetimepicker], :format => 'pdf'})), target: :_blank, class: 'btn icon-print btn-link' %>
   </form>
 </div>
+
+
 <div class="print">
   <% if @remessas.size > 0 %>
       Setor de Origem: <%= Setor.find(@remessas.first.setor_id_anterior).nome %>
@@ -20,7 +22,7 @@
   <thead>
   <tr>
     <th>Setor de Destino</th>
-    <th>Protocolo</th> 
+    <th>Git</th> 
     <th>Pessoa</th>
     <th>Descrição</th>     
   </tr>
@@ -29,7 +31,7 @@
   <% @remessas.each do |remessa| %>
       <tr id="<%= remessa.id %>">       
         <td><%= remessa.setor.nome %></td>
-        <td><%= remessa.processo.numero_protocolo %></td>
+        <td><%= remessa.processo.numero_git %></td>
         <td><%= remessa.processo.nome %></td>
         <td><%= remessa.processo.descricao %></td>
       </tr>

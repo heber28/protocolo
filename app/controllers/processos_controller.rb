@@ -8,7 +8,7 @@ class ProcessosController < ApplicationController
     p = Hash.new
     params[:setor_id].blank? ? p[:setor_id] = '' : p[:setor_id] = params[:setor_id]
     params[:tag_id].blank? ? p[:tag_id] = '' : p[:tag_id] = params[:tag_id]
-    params[:numero_protocolo].blank? ? p[:numero_protocolo] = '' : p[:numero_protocolo] = params[:numero_protocolo]
+    params[:numero_git].blank? ? p[:numero_git] = '' : p[:numero_git] = params[:numero_git]
     params[:nome].blank? ? p[:nome] = '' : p[:nome] = params[:nome]
     params[:cpf].blank? ? p[:cpf] = '' : p[:cpf] = params[:cpf]
     params[:cnpj].blank? ? p[:cnpj] = '' : p[:cnpj] = params[:cnpj]
@@ -183,12 +183,12 @@ class ProcessosController < ApplicationController
     sql = 'id IS NOT NULL'
     sql = ' AND cpf = ?' if !params[:cpf].blank?
     sql = ' AND cnpj = ?' if !params[:cnpj].blank?
-    sql = ' AND numero_protocolo = ?' if !params[:protocolo].blank?    
+    sql = ' AND numero_git = ?' if !params[:git].blank?    
     conditions = []
     conditions << sql
     conditions << params[:cpf] if !params[:cpf].blank?
     conditions << params[:cnpj] if !params[:cnpj].blank?
-    conditions << params[:numero_protocolo] if !params[:numero_protocolo].blank?    
+    conditions << params[:numero_git] if !params[:numero_git].blank?    
     @processos = Processo.where(conditions)
   end
 

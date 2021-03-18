@@ -5,7 +5,7 @@ class CreateProcessos < ActiveRecord::Migration
       t.integer :usuario_id
       t.integer :setor_id # setor onde foi criado o processo
       t.integer :setor_id_atual # setor onde esta o processo
-      t.integer :numero_protocolo
+      t.integer :numero_git
       t.string :nome
       t.string :cpf
       t.string :cnpj

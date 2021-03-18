@@ -1,6 +1,6 @@
 <%= simple_nested_form_for @processo, :html => {:class => 'form-horizontal'} do |f| %>
   <% readonly = (can? :modify, @processo) ? false : true %>
-  <%= f.input :numero_protocolo, :label => 'Número do Protocolo', :input_html => {:readonly => readonly} %>
+  <%= f.input :numero_git, :label => 'Número do Git', :input_html => {:readonly => readonly} %>
  
   <%= f.input :nome, :input_html => {:class => 'span6'} %>
   <div class="controls"><span id="validacao_cpf"></span></div>
@@ -83,7 +83,7 @@
       <div class="controls">
         <%= a.file_field :arquivo, :input_html => {:class => 'span6'} %>
         <%= File.basename(a.object.arquivo.to_s) %>
-        <%= a.link_to_remove('Excluir') %>
+        <%= a.link_to_remove('Excluir') %><br><br>
       </div>
   <% end %>
   <%= f.link_to_add "Adicionar arquivo", :arquivos %>

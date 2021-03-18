@@ -16,7 +16,7 @@ class Ability
     if usuario.nil?
       can :pesquisar, Processo
       can :visualizar, Processo
-      can :pesquisar_por_protocolo, Processo
+      can :pesquisar_por_git, Processo
       can :read, Setor
     else
       can :read, Processo
@@ -72,7 +72,7 @@ class Ability
 
       can :visualizar, Processo
 
-      can :pesquisar_por_protocolo, Processo
+      can :pesquisar_por_git, Processo
 
       can :remessa, Tramite
 

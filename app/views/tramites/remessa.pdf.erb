@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+	<title>Remessa de Processos</title>
+	<meta charset='utf-8'/>
+</head>
+<style>
+	h1 {
+		font-family: "Trebuchet MS", Helvetica, sans-serif;
+		font-size: medium;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		background-color: white;
+		font-size: medium;
+		font-family: "Trebuchet MS", Helvetica, sans-serif;
+	}
+
+	table {
+		font-family: "Trebuchet MS", Helvetica, sans-serif;
+		font-size: medium;
+		width: 100%;
+	}
+
+	* {
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+	}
+
+	.page {
+		width: 21cm;
+		min-height: 29.7cm;
+		padding: 2cm;
+		margin: 5cm auto;
+		border: 1px #D3D3D3 solid;
+		border-radius: 5px;
+		background: white;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.subpage {
+		padding: 1cm;
+		border: 5px red solid;
+		height: 256mm;
+		outline: 2cm #FFEAEA solid;
+	}
+
+	@page {
+		size: A4;
+		margin: 0;
+	}
+
+	@media print {
+		.page {
+			margin: 0;
+			border: initial;
+			border-radius: initial;
+			width: initial;
+			min-height: initial;
+			box-shadow: initial;
+			background: initial;
+			page-break-after: always;
+		}
+	}
+	.logo_cmtu {
+		float: left;
+	}
+	.logo_prefeitura {
+		float: right;
+	}
+	.titulo {
+		font-size: 120%;
+	}
+	#titulo1 {
+		font-size: 120%;
+	}
+
+	#titulo2 {
+		font-size: 120%;
+	}
+
+	#espaco_ {
+		margin-left: 40px;
+	}
+	.assinatura2 {
+		position: fixed;
+		left: 450px;
+	}
+	#assinatura1 {
+		position: fixed;
+		left: 175px;
+	}
+	#assinatura2 {
+		position: fixed;
+		left: 625px;
+	}
+</style>
+
+<div id="header">
+  <%= wicked_pdf_image_tag 'logo_cmtu.jpg', class: 'logo_cmtu' %>
+  <span id="espaco_"><strong>Companhia Municipal de Trânsito e Urbanização de Londrina</strong></span><br>
+  <span id="espaco_">Rua Prof. João Cândido 1213 CEP 86010-001 - Tel (43) 3379-7900</span><br>
+  <span id="espaco_">CNPJ 86.731.320/0001-37</span><br>
+</div>
+<div id="content">
+  <br>
+  <p align="Center" class="titulo"><span id="titulo1"><strong>Remessa de Processos</strong></span><br>
+
+  <table id="remessas">
+    <thead>
+    <tr>
+      <th align="left">Setor de Destino</th>
+      <th align="left">Descrição</th>
+	  <th align="left">Data</th>
+      <th align="left">Assinatura</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @remessas.each do |remessa| %>
+        <tr id="<%= remessa.id %>">
+          <td><%= remessa.setor.nome %></td>
+          <td><%= remessa.processo.descricao.truncate(50, separator: ' ') %></td>
+		  <td><%= l remessa.created_at %></td>
+          <td style="width:200px"><td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

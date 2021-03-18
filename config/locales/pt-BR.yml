@@ -1,9 +1,9 @@
 pt-BR:
-  'Processos da Pessoa': 'Processos da Pessoa'
-  'Processos do Setor': 'Processos do Setor'
+  Processos da Pessoa: Processos da Pessoa
+  Processos do Setor: Processos do Setor
   will_paginate:
-    previous_label: "Anterior"
-    next_label: "Próximo"
+    previous_label: Anterior
+    next_label: Próximo
     page_gap: "&hellip;"
   date:
     abbr_day_names:
@@ -37,9 +37,9 @@ pt-BR:
     - Sexta
     - Sábado
     formats:
-      default: ! '%d/%m/%Y'
-      long: ! '%d de %B de %Y'
-      short: ! '%d/%m/%y'
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d/%m/%y"
     month_names:
     - 
     - Janeiro
@@ -84,16 +84,16 @@ pt-BR:
         other: mais de %{count} anos
       x_days:
         one: 1 dia
-        other: ! '%{count} dias'
+        other: "%{count} dias"
       x_minutes:
         one: 1 minuto
-        other: ! '%{count} minutos'
+        other: "%{count} minutos"
       x_months:
         one: 1 mês
-        other: ! '%{count} meses'
+        other: "%{count} meses"
       x_seconds:
         one: 1 segundo
-        other: ! '%{count} segundos'
+        other: "%{count} segundos"
     prompts:
       day: Dia
       hour: Hora
@@ -101,9 +101,9 @@ pt-BR:
       month: Mês
       second: Segundo
       year: Ano
-  errors: &errors
-    format: ! '%{attribute} %{message}'
-    messages:
+  errors:
+    format: "%{attribute} %{message}"
+    messages: &1
       accepted: Deve ser aceito
       blank: Não pode ficar em branco
       confirmation: Não está de acordo com a confirmação
@@ -120,17 +120,17 @@ pt-BR:
       not_a_number: Não é um número
       not_an_integer: Não é um número inteiro
       odd: Deve ser ímpar
-      record_invalid: ! 'A validação falhou: %{errors}'
+      record_invalid: 'A validação falhou: %{errors}'
       taken: Já está em uso
-      too_long: ! 'É muito longo (máximo: %{count} caracteres)'
-      too_short: ! 'É muito curto (mínimo: %{count} caracteres)'
+      too_long: "É muito longo (máximo: %{count} caracteres)"
+      too_short: "É muito curto (mínimo: %{count} caracteres)"
       wrong_length: Não possui o tamanho esperado (%{count} caracteres)
       extension_white_list_error: Extensão não permitida
-    template:
-      body: ! 'Por favor, verifique o(s) seguinte(s) campo(s):'
+    template: &2
+      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
-        one: ! 'Não foi possível gravar %{model}: 1 erro'
-        other: ! 'Não foi possível gravar %{model}: %{count} erros.'
+        one: 'Não foi possível gravar %{model}: 1 erro'
+        other: 'Não foi possível gravar %{model}: %{count} erros.'
   helpers:
     select:
       prompt: Por favor selecione
@@ -138,36 +138,40 @@ pt-BR:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+      processo:
+        create: Create Processo
+        update: Update Processo
     links:
       new: Novo
       back: Voltar
       edit: Editar
       destroy: Excluir
       cancel: Cancelar
+      confirm: Você tem certeza?
     titles:
       new: Novo %{model}
       edit: Editar %{model}
     actions: Ação
-    created_at: 'Criado em'
+    created_at: Criado em
   number:
     currency:
       format:
-        delimiter: .
-        format: ! '%u %n'
+        delimiter: "."
+        format: "%u %n"
         precision: 2
-        separator: ! ','
+        separator: ","
         significant: false
         strip_insignificant_zeros: false
         unit: R$
     format:
-      delimiter: .
+      delimiter: "."
       precision: 3
-      separator: ! ','
+      separator: ","
       significant: false
       strip_insignificant_zeros: false
     human:
       decimal_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
           billion:
             one: bilhão
@@ -184,12 +188,12 @@ pt-BR:
             other: trilhões
           unit: ''
       format:
-        delimiter: .
+        delimiter: "."
         precision: 2
         significant: true
         strip_insignificant_zeros: true
       storage_units:
-        format: ! '%n %u'
+        format: "%n %u"
         units:
           byte:
             one: Byte
@@ -198,29 +202,115 @@ pt-BR:
           kb: KB
           mb: MB
           tb: TB
-      created_at: 'Criado em' 
+      created_at: Criado em
     percentage:
       format:
-        delimiter: .
+        delimiter: "."
     precision:
       format:
-        delimiter: .
+        delimiter: "."
   support:
     array:
-      last_word_connector: ! ' e '
-      two_words_connector: ! ' e '
-      words_connector: ! ', '
+      last_word_connector: " e "
+      two_words_connector: " e "
+      words_connector: ", "
   time:
     am: ''
     formats:
-      default: ! '%d/%m/%y %H:%M'
-      long: ! '%A, %d de %B de %Y, %H:%M h'
-      short: ! '%d/%m/%y'
+      default: "%d/%m/%y"
+      long: "%A, %d de %B de %Y, %H:%M h"
+      short: "%d/%m/%y"
     pm: ''
-  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
     errors:
-      <<: *errors
+      format: "%{attribute} %{message}"
+      messages: *1
+      template: *2
   activerecord:
     errors:
-      <<: *errors
+      format: "%{attribute} %{message}"
+      messages: *1
+      template: *2
+    attributes:
+      processo:
+        nome: Nome
+        cnpj: Cnpj
+        cpf: Cpf
+      usuario:
+        autor: Autor
+        desativado: Desativado
+        nome: Nome
+        administrador: Administrador
+        login: Login
+    models:
+      processo: Processo
+  processos:
+    form:
+      cancel: Cancelar
+    index:
+      actions: Ação
+      confirm: Você tem certeza?
+      destroy: Excluir
+    show:
+      confirm: Você tem certeza?
+      destroy: Excluir
+      edit: Editar
+    pesquisar:
+      actions: Ação
+  simple_form:
+    hints:
+      processo:
+        new:
+          nome: Nome
+          numero_protocolo: Número do Protocolo
+          cnpj: Cnpj
+          cpf: Cpf
+          numero_git: Número Git
+        edit:
+          cnpj: Cnpj
+          cpf: Cpf
+          nome: Nome
+          numero_protocolo: Número do Protocolo
+          numero_git: Número Git
+    labels:
+      processo:
+        new:
+          cnpj: Cnpj
+          cpf: Cpf
+          nome: Nome
+        edit:
+          cnpj: Cnpj
+          cpf: Cpf
+          nome: Nome
+    placeholders:
+      processo:
+        comentarios:
+          new:
+            descricao: Descrição
+          edit:
+            descricao: Descrição
+        new:
+          cpf: Cpf
+          descricao: Descrição
+          nome: Nome
+          numero_protocolo: Número do Protocolo
+          cnpj: Cnpj
+          numero_git: Número Git
+        edit:
+          cnpj: Cnpj
+          cpf: Cpf
+          descricao: Descrição
+          nome: Nome
+          numero_protocolo: Número do Protocolo
+          numero_git: Número Git
+    required:
+      html: <abbr title="required">*</abbr>
+      mark: "*"
+      text: required
+  usuarios:
+    index:
+      edit: Editar
+      destroy: Excluir
+      actions: Ação
+      confirm: Você tem certeza?
+      new: Novo
