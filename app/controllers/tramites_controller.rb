@@ -102,17 +102,13 @@ class TramitesController < ApplicationController
 
   def remessa
     @remessas = Tramite.where("id is null")
-    if params[:setor_id].blank? == false && params[:datetimepicker].blank? == false
-      inicio = DateTime.strptime(params[:datetimepicker], "%d/%m/%Y %H:%M").to_datetime
-      @setor_id = params[:setor_id]
-      @remessas = Tramite.where("processo_id is not null and created_at >= ? and setor_id_anterior = ?", inicio, params[:setor_id]).order(:setor_id)
-    else
-      if current_user.id != nil
-        @setor_id = current_setor.id
-        data = Date.today
-        @remessas = Tramite.where("processo_id is not null and date(created_at) = ? and setor_id_anterior = ?", data, @setor_id).order(:setor_id)
-      end
-    end
+    params[:data] = Time.now.strftime("%d/%m/%Y 00:00") if params[:data].blank?
+    params[:setor_id] = current_setor.id
+
+    inicio = DateTime.strptime(params[:data], "%d/%m/%Y %H:%M").to_datetime
+    @setor_id = params[:setor_id]
+    @remessas = Tramite.where("processo_id is not null and created_at >= ? and setor_id_anterior = ?", inicio, params[:setor_id]).order(:setor_id)
+
     respond_to do |format|
       format.html
       format.pdf do
