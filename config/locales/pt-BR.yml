@@ -244,6 +244,7 @@ pt-BR:
         nome: Nome
         administrador: Administrador
         login: Login
+        pode_alterar_setor: Pode alterar setor
       usuario_setor:
         setor: Setor
     models:
@@ -342,6 +343,11 @@ pt-BR:
       new: Novo
     form:
       cancel: Cancelar
+    show:
+      back: Voltar
+      destroy: Excluir
+      edit: Editar
+      confirm: Você tem certeza?
   tags:
     index:
       edit: Editar

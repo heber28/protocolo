@@ -25,7 +25,6 @@ class CreateUsuarioSetores < ActiveRecord::Migration
     UsuarioSetor.create :usuario_id => 1, :setor_id => 17
     UsuarioSetor.create :usuario_id => 1, :setor_id => 18
     UsuarioSetor.create :usuario_id => 1, :setor_id => 19
-    UsuarioSetor.create :usuario_id => 1, :setor_id => 20
 
     UsuarioSetor.create :usuario_id => 2, :setor_id => 1
     UsuarioSetor.create :usuario_id => 2, :setor_id => 2
@@ -46,7 +45,6 @@ class CreateUsuarioSetores < ActiveRecord::Migration
     UsuarioSetor.create :usuario_id => 2, :setor_id => 17
     UsuarioSetor.create :usuario_id => 2, :setor_id => 18
     UsuarioSetor.create :usuario_id => 2, :setor_id => 19
-    UsuarioSetor.create :usuario_id => 2, :setor_id => 20
 
     UsuarioSetor.create :usuario_id => 3, :setor_id => 1
     UsuarioSetor.create :usuario_id => 3, :setor_id => 2
@@ -67,7 +65,6 @@ class CreateUsuarioSetores < ActiveRecord::Migration
     UsuarioSetor.create :usuario_id => 3, :setor_id => 17
     UsuarioSetor.create :usuario_id => 3, :setor_id => 18
     UsuarioSetor.create :usuario_id => 3, :setor_id => 19
-    UsuarioSetor.create :usuario_id => 3, :setor_id => 20
 
     UsuarioSetor.create :usuario_id => 4, :setor_id => 1
     UsuarioSetor.create :usuario_id => 4, :setor_id => 2
@@ -88,7 +85,6 @@ class CreateUsuarioSetores < ActiveRecord::Migration
     UsuarioSetor.create :usuario_id => 4, :setor_id => 17
     UsuarioSetor.create :usuario_id => 4, :setor_id => 18
     UsuarioSetor.create :usuario_id => 4, :setor_id => 19
-    UsuarioSetor.create :usuario_id => 4, :setor_id => 20
 
     UsuarioSetor.create :usuario_id => 5, :setor_id => 1
     UsuarioSetor.create :usuario_id => 5, :setor_id => 2
@@ -109,7 +105,6 @@ class CreateUsuarioSetores < ActiveRecord::Migration
     UsuarioSetor.create :usuario_id => 5, :setor_id => 17
     UsuarioSetor.create :usuario_id => 5, :setor_id => 18
     UsuarioSetor.create :usuario_id => 5, :setor_id => 19
-    UsuarioSetor.create :usuario_id => 5, :setor_id => 20
 
     UsuarioSetor.create :usuario_id => 6, :setor_id => 1
     UsuarioSetor.create :usuario_id => 6, :setor_id => 2
@@ -130,7 +125,6 @@ class CreateUsuarioSetores < ActiveRecord::Migration
     UsuarioSetor.create :usuario_id => 6, :setor_id => 17
     UsuarioSetor.create :usuario_id => 6, :setor_id => 18
     UsuarioSetor.create :usuario_id => 6, :setor_id => 19
-    UsuarioSetor.create :usuario_id => 6, :setor_id => 20
 
     UsuarioSetor.create :usuario_id => 7, :setor_id => 1
     UsuarioSetor.create :usuario_id => 7, :setor_id => 2
@@ -151,6 +145,5 @@ class CreateUsuarioSetores < ActiveRecord::Migration
     UsuarioSetor.create :usuario_id => 7, :setor_id => 17
     UsuarioSetor.create :usuario_id => 7, :setor_id => 18
     UsuarioSetor.create :usuario_id => 7, :setor_id => 19
-    UsuarioSetor.create :usuario_id => 7, :setor_id => 20
   end
 end

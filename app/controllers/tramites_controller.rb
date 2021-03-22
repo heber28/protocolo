@@ -102,10 +102,10 @@ class TramitesController < ApplicationController
 
   def remessa
     @remessas = Tramite.where("id is null")
-    params[:data] = Time.now.strftime("%d/%m/%Y 00:00") if params[:data].blank?
+    params[:datetimepicker] = Time.now.strftime("%d/%m/%Y 00:00") if params[:data].blank?
     params[:setor_id] = current_setor.id
 
-    inicio = DateTime.strptime(params[:data], "%d/%m/%Y %H:%M").to_datetime
+    inicio = DateTime.strptime(params[:datetimepicker], "%d/%m/%Y %H:%M").to_datetime
     @setor_id = params[:setor_id]
     @remessas = Tramite.where("processo_id is not null and created_at >= ? and setor_id_anterior = ?", inicio, params[:setor_id]).order(:setor_id)
 
