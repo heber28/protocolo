@@ -139,8 +139,8 @@ pt-BR:
       submit: Salvar %{model}
       update: Atualizar %{model}
       processo:
-        create: Create Processo
-        update: Update Processo
+        create: Criar Processo
+        update: Atualizar Processo
     links:
       new: Novo
       back: Voltar
@@ -261,48 +261,48 @@ pt-BR:
     hints:
       processo:
         new:
-          nome: Nome
+          nome: 
           numero_protocolo: Número do Protocolo
-          cnpj: Cnpj
-          cpf: Cpf
-          numero_git: Número Git
+          cnpj: 
+          cpf: 
+          numero_git: 
         edit:
-          cnpj: Cnpj
-          cpf: Cpf
-          nome: Nome
+          cnpj: 
+          cpf: 
+          nome: 
           numero_protocolo: Número do Protocolo
-          numero_git: Número Git
+          numero_git: 
     labels:
       processo:
         new:
-          cnpj: Cnpj
-          cpf: Cpf
-          nome: Nome
+          cnpj: 
+          cpf: 
+          nome: 
         edit:
-          cnpj: Cnpj
-          cpf: Cpf
-          nome: Nome
+          cnpj: 
+          cpf: 
+          nome: 
     placeholders:
       processo:
         comentarios:
           new:
-            descricao: Descrição
+            descricao: 
           edit:
-            descricao: Descrição
+            descricao: 
         new:
-          cpf: Cpf
-          descricao: Descrição
-          nome: Nome
+          cpf: 
+          descricao: 
+          nome: 
           numero_protocolo: Número do Protocolo
-          cnpj: Cnpj
-          numero_git: Número Git
+          cnpj: 
+          numero_git: 
         edit:
-          cnpj: Cnpj
-          cpf: Cpf
-          descricao: Descrição
-          nome: Nome
+          cnpj: 
+          cpf: 
+          descricao: 
+          nome: 
           numero_protocolo: Número do Protocolo
-          numero_git: Número Git
+          numero_git: 
     required:
       html: <abbr title="required">*</abbr>
       mark: "*"

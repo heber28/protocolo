@@ -52,8 +52,7 @@ class ProcessosController < ApplicationController
   # GET /processos/1
   # GET /processos/1.json
   def show
-    #cancan @processo = Processo.find(params[:id])
-
+    #@processo = Processo.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @processo }

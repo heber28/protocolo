@@ -4,7 +4,7 @@ gem "localeapp"
 
 gem 'nokogiri', '1.9.1'
 
-gem 'rake', '12.3.2'
+gem 'rake', '13.0.3'
 
 gem 'bundler', '1.17.3'
 

@@ -47,7 +47,7 @@
         Tag
       </div>
       <div class="span4">
-        <%= select_tag :tag_id, options_for_select(Tag.all.collect {|r| [r.descricao, r.id]}, params[:tag_id]), :include_blank => true, :class => 'span4' %>
+        <%= select_tag :tag_id, options_for_select(Tag.order(:descricao).collect {|r| [r.descricao, r.id]}, params[:tag_id]), :include_blank => true, :class => 'span4' %>
       </div>
     </div>
     <div class="row">
