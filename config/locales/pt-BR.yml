@@ -141,6 +141,8 @@ pt-BR:
       processo:
         create: Criar Processo
         update: Atualizar Processo
+      usuario:
+        update: Update Usuario
     links:
       new: Novo
       back: Voltar
@@ -242,8 +244,11 @@ pt-BR:
         nome: Nome
         administrador: Administrador
         login: Login
+      usuario_setor:
+        setor: Setor
     models:
       processo: Processo
+      usuario: Usuario
   processos:
     form:
       cancel: Cancelar
@@ -272,6 +277,11 @@ pt-BR:
           nome: 
           numero_protocolo: Número do Protocolo
           numero_git: 
+      usuario:
+        edit:
+          desativado: 
+          nome: 
+          password_confirmation: 
     labels:
       processo:
         new:
@@ -282,6 +292,16 @@ pt-BR:
           cnpj: 
           cpf: 
           nome: 
+      usuario:
+        edit:
+          administrador: 
+          autor: 
+          desativado: 
+          login: 
+          nome: 
+        usuario_setores:
+          edit:
+            setor: 
     placeholders:
       processo:
         comentarios:
@@ -303,6 +323,12 @@ pt-BR:
           nome: 
           numero_protocolo: Número do Protocolo
           numero_git: 
+      usuario:
+        edit:
+          login: 
+          nome: 
+          password: 
+          password_confirmation: 
     required:
       html: <abbr title="required">*</abbr>
       mark: "*"
@@ -314,3 +340,12 @@ pt-BR:
       actions: Ação
       confirm: Você tem certeza?
       new: Novo
+    form:
+      cancel: Cancelar
+  tags:
+    index:
+      edit: Editar
+      new: Novo
+      actions: Ação
+      confirm: Você tem certeza?
+      destroy: Excluir

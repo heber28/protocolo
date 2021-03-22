@@ -6,7 +6,7 @@
     <%= select_tag :setor_id, options_for_select(Setor.all.collect { |s| [s.nome, s.id] }, @setor_id), :include_blank => true, :class => 'span5' %>
     <%= text_field_tag :datetimepicker, (params[:datetimepicker] or (Time.now.strftime('%d/%m/%Y 00:00'))), :class => 'span2' %>
     <button type="submit" class="btn icon-search"></button>
-    <%= link_to "", remessa_path(request.query_parameters.merge({:setor_id => params[:setor_id], :datetimepicker => params[:datetimepicker], :format => 'pdf'})), target: :_blank, class: 'btn icon-print btn-link' %>
+    <%= link_to "", remessa_path(request.query_parameters.merge({:setor_id => params[:setor_id], :datetimepicker => params[:datetimepicker], :format => 'pdf'})), target: :_blank, class: 'btn icon-print', style: 'padding-top: 6px;padding-bottom: 5px;' %>
   </form>
 </div>
 
