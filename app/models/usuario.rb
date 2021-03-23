@@ -15,6 +15,13 @@ class Usuario < ActiveRecord::Base
   validates :password, :length => {:minimum => 6}, :on => :update, :unless => lambda { |user| user.password.blank? }
   validate :password_complexity
   accepts_nested_attributes_for :usuario_setores, allow_destroy: true
+  before_save :antes_de_salvar
+
+  def antes_de_salvar
+    self.nome = ApplicationController.helpers.formatar(nome)
+    self.login = login.downcase.strip
+  end
+
 
   def password_complexity
     if password.present? and not password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+/)
