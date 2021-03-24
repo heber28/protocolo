@@ -81,9 +81,9 @@
   <br/><br/>
   <%= f.fields_for :arquivos do |a| %>
       <div class="controls">
-        <%= a.file_field :arquivo, :input_html => {:class => 'span6'} %>
+        <%= a.file_field :arquivo, multiple: false, accept:'image/*', :input_html => {:class => 'span6'} %>
         <%= File.basename(a.object.arquivo.to_s) %>
-        <%= a.link_to_remove('Excluir') %><br><br>
+        <%= a.link_to_remove('Excluir') %><br>
       </div>
   <% end %>
   <%= f.link_to_add "Adicionar arquivo", :arquivos %>

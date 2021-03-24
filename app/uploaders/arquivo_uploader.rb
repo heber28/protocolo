@@ -43,10 +43,10 @@ class ArquivoUploader < CarrierWave::Uploader::Base
   #process :read_dimensions
   #process :extract_dimensions
   # Create different versions of your uploaded files:
-  version :thumb do
+  #version :thumb do
     #process :scale => [50, 50]
-    process :resize_to_limit => [200, 200]
-  end
+   # process :resize_to_limit => [200, 200]
+  #end
 
   version :content do
     process :resize_to_limit => [800, 800]
@@ -55,7 +55,7 @@ class ArquivoUploader < CarrierWave::Uploader::Base
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-    %w(jpg jpeg gif png pdf doc docx xls xlsx)
+    %w(jpg jpeg gif png)
   end
 
   # Override the filename of the uploaded files:

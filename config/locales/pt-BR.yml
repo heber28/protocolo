@@ -103,7 +103,7 @@ pt-BR:
       year: Ano
   errors:
     format: "%{attribute} %{message}"
-    messages: &1
+    messages:
       accepted: Deve ser aceito
       blank: Não pode ficar em branco
       confirmation: Não está de acordo com a confirmação
@@ -126,7 +126,10 @@ pt-BR:
       too_short: "É muito curto (mínimo: %{count} caracteres)"
       wrong_length: Não possui o tamanho esperado (%{count} caracteres)
       extension_white_list_error: Extensão não permitida
-    template: &2
+      mini_magick_processing_error: |
+        Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: `identify /tmp/mini_magick20210324-3839-1wxz845.pdf` failed with error:
+        identify: not authorized `/tmp/mini_magick20210324-3839-1wxz845.pdf' @ error/constitute.c/ReadImage/412.
+    template: &1
       body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
       header:
         one: 'Não foi possível gravar %{model}: 1 erro'
@@ -226,13 +229,35 @@ pt-BR:
   activemodel:
     errors:
       format: "%{attribute} %{message}"
-      messages: *1
-      template: *2
+      messages: &2
+        accepted: Deve ser aceito
+        blank: Não pode ficar em branco
+        confirmation: Não está de acordo com a confirmação
+        empty: Não pode ficar vazio
+        equal_to: Deve ser igual a %{count}
+        even: Deve ser par
+        exclusion: Não está disponível
+        greater_than: Deve ser maior que %{count}
+        greater_than_or_equal_to: Deve ser maior ou igual a %{count}
+        inclusion: Não está incluído na lista
+        invalid: Não é válido
+        less_than: Deve ser menor que %{count}
+        less_than_or_equal_to: Deve ser menor ou igual a %{count}
+        not_a_number: Não é um número
+        not_an_integer: Não é um número inteiro
+        odd: Deve ser ímpar
+        record_invalid: 'A validação falhou: %{errors}'
+        taken: Já está em uso
+        too_long: "É muito longo (máximo: %{count} caracteres)"
+        too_short: "É muito curto (mínimo: %{count} caracteres)"
+        wrong_length: Não possui o tamanho esperado (%{count} caracteres)
+        extension_white_list_error: Extensão não permitida
+      template: *1
   activerecord:
     errors:
       format: "%{attribute} %{message}"
-      messages: *1
-      template: *2
+      messages: *2
+      template: *1
     attributes:
       processo:
         nome: Nome
