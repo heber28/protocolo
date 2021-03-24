@@ -7,12 +7,4 @@ class Arquivo < ActiveRecord::Base
     File.basename(arquivo.path || arquivo.filename) if arquivo
   end
 
-  def nome_arquivo
-    if arquivo.path.nil?
-      ""
-    else
-      File.basename(arquivo.path)
-    end
-  end
-
 end

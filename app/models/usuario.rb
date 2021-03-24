@@ -19,7 +19,7 @@ class Usuario < ActiveRecord::Base
 
   def antes_de_salvar
     self.nome = ApplicationController.helpers.formatar(nome)
-    self.login = login.downcase.strip
+    self.login = login.downcase
   end
 
 

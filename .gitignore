@@ -16,5 +16,6 @@
 /config/database.yml
 /public/assets
 /public/uploads
+/uploads
 /config/local_env.yml
 /public/system/redactor_assets

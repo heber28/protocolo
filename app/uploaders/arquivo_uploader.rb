@@ -20,10 +20,14 @@ class ArquivoUploader < CarrierWave::Uploader::Base
   #storage :fog
   storage :file
 
+  #def filename
+  #  "#{model.id.to_s}.#{file.extension}" if original_filename.present?
+  #end
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "uploads/#{mounted_as}/#{model.processo.id}/#{model.id}"
+    "../uploads/#{model.processo.id}/#{model.id}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -36,6 +40,7 @@ class ArquivoUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
+  process :resize_to_limit => [800, 800]
   #
   # def scale(width, height)
   #   # do something
@@ -48,9 +53,9 @@ class ArquivoUploader < CarrierWave::Uploader::Base
    # process :resize_to_limit => [200, 200]
   #end
 
-  version :content do
-    process :resize_to_limit => [800, 800]
-  end
+  #version :content do
+  #  process :resize_to_limit => [800, 800]
+  #end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

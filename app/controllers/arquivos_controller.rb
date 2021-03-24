@@ -5,7 +5,7 @@ class ArquivosController < ApplicationController
   def download
     a = Arquivo.find(params[:id])
     a.arquivo.to_s
-    path = Rails.root.realpath.to_s + '/public/uploads/arquivo/' + a.processo.id.to_s + '/' + a.id.to_s + '/'  + a.nome.to_s    
+    path = Rails.root.realpath.to_s + '/uploads/' + a.processo.id.to_s + '/' + a.id.to_s + '/'  + a.nome.to_s    
     send_file(path, filename: a.nome)
   end
 
