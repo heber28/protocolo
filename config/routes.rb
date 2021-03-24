@@ -1,6 +1,6 @@
 Protocolo::Application.routes.draw do
 
-  resources :arquivos
+  #resources :arquivos
 
   resources :notificacoes
 
@@ -11,6 +11,8 @@ Protocolo::Application.routes.draw do
   get 'visualizar', to: 'processos#visualizar', as: 'visualizar'
 
   get 'remessa', to: 'tramites#remessa', as: 'remessa'
+
+  get 'download', to: 'arquivos#download', as: 'download'
 
   resources :usuarios
 

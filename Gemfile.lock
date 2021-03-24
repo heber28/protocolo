@@ -36,6 +36,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     builder (3.0.4)
+    byebug (10.0.2)
     cancan (1.6.10)
     capistrano (2.15.7)
       highline
@@ -380,6 +381,7 @@ DEPENDENCIES
   brcep
   brcpfcnpj
   bundler (= 1.17.3)
+  byebug
   cancan
   capistrano
   capistrano-local-precompile

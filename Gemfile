@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gem "localeapp" 
 
+gem 'byebug'
+
 gem 'nokogiri', '1.9.1'
 
 gem 'rake', '13.0.3'

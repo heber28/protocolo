@@ -1,6 +1,14 @@
 class ArquivosController < ApplicationController
   # GET /arquivos
   # GET /arquivos.json
+  
+  def download
+    a = Arquivo.find(params[:id])
+    a.arquivo.to_s
+    path = Rails.root.realpath.to_s + '/public/uploads/arquivo/' + a.processo.id.to_s + '/' + a.id.to_s + '/'  + a.nome.to_s    
+    send_file(path, filename: a.nome)
+  end
+
   def index
     processo_id = params[:processo_id]
     @arquivos = Arquivo.where("processo_id = ?", processo_id)
