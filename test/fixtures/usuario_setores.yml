@@ -6,4 +6,40 @@ one:
 
 two:
   usuario_id: 1
+  setor_id: 2
+
+three:
+  usuario_id: 1
+  setor_id: 3
+
+four:
+  usuario_id: 2
   setor_id: 1
+
+five:
+  usuario_id: 2
+  setor_id: 2
+
+six:
+  usuario_id: 2
+  setor_id: 3
+
+seven:
+  usuario_id: 3
+  setor_id: 1
+
+eight:
+  usuario_id: 4
+  setor_id: 1
+
+nine:
+  usuario_id: 4
+  setor_id: 2
+
+ten:
+  usuario_id: 4
+  setor_id: 3
+
+eleven:
+  usuario_id: 4
+  setor_id: 5

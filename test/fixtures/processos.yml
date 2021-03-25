@@ -1,9 +1,56 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  descricao: MyText
+  descricao: 'Descrição 1'
+  usuario_id: 1
   setor_id: 1
-
+  setor_id_atual: 1
+  numero_git: '123'
+  nome: 'Antonio Gonçalves'
+  cpf: '792.987.940-29'
+  cnpj: ''
+  data_tramite: '2021-01-01'
+  
 two:
-  descricao: MyText
+  descricao: 'Descrição 2'
+  usuario_id: 1
   setor_id: 1
+  setor_id_atual: 2
+  numero_git: '345'
+  nome: 'Monica da Silva'
+  cpf: '371.268.690-02'
+  cnpj: ''
+  data_tramite: '2021-01-02'
+
+three:
+  descricao: 'Descrição 3'
+  usuario_id: 2
+  setor_id: 2
+  setor_id_atual: 3
+  numero_git: '253'
+  nome: 'Joaquim Barbosa'
+  cpf: '191.240.530-07'
+  cnpj: ''
+  data_tramite: '2021-01-02'
+
+four:
+  descricao: 'Descrição 4'
+  usuario_id: 3
+  setor_id: 3
+  setor_id_atual: 4
+  numero_git: '254'
+  nome: 'Sergio Mauricio'
+  cpf: '275.224.880-60'
+  cnpj: ''
+  data_tramite: '2021-01-02'
+
+five:
+  descricao: 'Descrição 5'
+  usuario_id: 4
+  setor_id: 2
+  setor_id_atual: 4
+  numero_git: '245'
+  nome: 'Loja das Fechaduras'
+  cpf: ''
+  cnpj: '73.858.829/0001-01'
+  data_tramite: '2021-01-02'

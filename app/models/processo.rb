@@ -79,14 +79,14 @@ class Processo < ActiveRecord::Base
 
   private
 
-  def checar_tramite
+  def checar_tramite # não mais usado pois o delete vai ser cascade no processo
     if tramites.size > 0
       self.errors[:tramites] << "Não é possível excluir o processo enquanto existir trâmites neste processo"
       return false
     end
   end
 
-  def checar_comentario
+  def checar_comentario # não mais usado pois o delete vai ser cascade no processo
     if comentarios.size > 0
       self.errors[:comentarios] << "Não é possível excluir o processo enquanto existir comentários neste processo"
       return false

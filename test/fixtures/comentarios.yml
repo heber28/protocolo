@@ -1,11 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  descricao: MyString
+  descricao: 'Comentario 1'
   processo_id: 1
   usuario_id: 1
 
 two:
-  descricao: MyString
+  descricao: 'Comentario 2'
   processo_id: 1
   usuario_id: 1
+
+three:
+  descricao: 'Comentario 3'
+  processo_id: 2
+  usuario_id: 2
+
+four:
+  descricao: 'Comentario 4'
+  processo_id: 2
+  usuario_id: 3
+
+five:
+  descricao: 'Comentario 5'
+  processo_id: 2
+  usuario_id: 4
+
+six:
+  descricao: 'Comentario 6'
+  processo_id: 3
+  usuario_id: 3

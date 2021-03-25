@@ -1,7 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  arquivo: MyString
+  processo_id: 1
+  arquivo: nissan_gtr_nissan_car_147728_3840x2160.jpg
 
 two:
-  arquivo: MyString
+  processo_id: 1
+  arquivo: nissan_gtr_nissan_rear_view_137651_3840x2160.jpg
+
+three:
+  processo_id: 2
+  arquivo: nissan_gtr_nissan_sportscar_147975_3840x2160.jpg
+
+four:
+  processo_id: 2
+  arquivo: nissan_gtr_nissan_car_201947_3840x2160.jpg
+
+five:
+  processo_id: 3
+  arquivo: nissan_gtr_nissan_car_201947_3840x2160.jpg

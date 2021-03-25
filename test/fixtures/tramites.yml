@@ -2,10 +2,24 @@
 
 one:
   processo_id: 1
-  setor_id: 1
+  setor_id_anterior: 1
+  setor_id: 2
   usuario_id: 1
 
 two:
   processo_id: 1
-  setor_id: 1
+  setor_id_anterior: 2
+  setor_id: 3
   usuario_id: 1
+
+three:
+  processo_id: 2
+  setor_id_anterior: 1
+  setor_id: 3
+  usuario_id: 2
+
+four:
+  processo_id: 3
+  setor_id_anterior: 3
+  setor_id: 4
+  usuario_id: 2

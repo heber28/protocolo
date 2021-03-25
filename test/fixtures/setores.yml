@@ -1,7 +1,22 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  nome: MyString
+  nome: "Apoio Jari"
 
 two:
-  nome: MyString
+  nome: "Arquivo Geral"
+
+three:
+  nome: "Assessoria Juridica"
+
+four:
+  nome: "Coordenadoria de Multas"
+
+five:
+  nome: "Coordenadoria de Sistema Viario"
+
+six: 
+  nome: "Coordenadoria de Transito"
+
+seven:
+  nome: "Coordenadoria Financeira"
