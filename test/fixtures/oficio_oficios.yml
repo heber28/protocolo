@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  oficio_id: 1
-  oficio_id_vinculado: 1
-
-two:
-  oficio_id: 1
-  oficio_id_vinculado: 1

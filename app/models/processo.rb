@@ -12,7 +12,7 @@ class Processo < ActiveRecord::Base
   accepts_nested_attributes_for :comentarios, allow_destroy: true
   accepts_nested_attributes_for :tramites, allow_destroy: true
   accepts_nested_attributes_for :arquivos, allow_destroy: true
-  #validates_presence_of :descricao, :message => "A descrição precisa ser preenchida"
+  validates_presence_of :nome, :message => "O nome precisa ser preenchido"
 
   #before_destroy :checar_tramite
   #before_destroy :checar_comentario
