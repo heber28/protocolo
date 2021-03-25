@@ -14,8 +14,8 @@ class ArquivoUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   #storage :fog
 
-  include CarrierWave::MimeTypes
-  process :set_content_type
+  #include CarrierWave::MimeTypes
+  #process :set_content_type
 
   #storage :fog
   storage :file
