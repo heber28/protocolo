@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class ProcessoTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "nao salva sem o nome" do
+    processo = Processo.new
+    assert !processo.save
+  end
 end

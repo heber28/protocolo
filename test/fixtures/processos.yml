@@ -2,14 +2,8 @@
 
 one:
   descricao: MyText
-  situacao: MyString
-  pessoa_id: 1
-  usuario_id: 1
   setor_id: 1
 
 two:
   descricao: MyText
-  situacao: MyString
-  pessoa_id: 1
-  usuario_id: 1
   setor_id: 1

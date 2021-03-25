@@ -258,6 +258,15 @@ pt-BR:
       format: "%{attribute} %{message}"
       messages: *2
       template: *1
+      models:
+        comentario:
+          attributes:
+            descricao:
+              blank: A descricao precisa ser preenchida
+        tramite:
+          attributes:
+            setor_id:
+              blank: O setor precisa ser selecionado
     attributes:
       processo:
         nome: Nome
@@ -272,9 +281,15 @@ pt-BR:
         pode_alterar_setor: Pode alterar setor
       usuario_setor:
         setor: Setor
+      comentario:
+        descricao: Descricao
+      tramite:
+        setor_id: Setor
     models:
       processo: Processo
       usuario: Usuario
+      comentario: Comentario
+      tramite: Tramite
   processos:
     form:
       cancel: Cancelar
@@ -288,6 +303,9 @@ pt-BR:
       edit: Editar
     pesquisar:
       actions: Ação
+      confirm: Você tem certeza?
+      destroy: Excluir
+      edit: Editar
   simple_form:
     hints:
       processo:

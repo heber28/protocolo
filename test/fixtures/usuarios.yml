@@ -1,13 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  usuario: MyString
+  login: MyString
   password_digest: MyString
   administrador: false
   autor: false  
-
+  desativado: false
+  pode_alterar_setor: false
 two:
-  usuario: MyString
-  password_digest: MyString
+  login: MyString2
+  password_digest: MyString2
   administrador: false
-  autor: false  
+  autor: false
+  desativado: false
+  pode_alterar_setor: true 
