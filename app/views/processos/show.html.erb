@@ -12,13 +12,13 @@
   <dd><%= @processo.numero_git %></dd>
 
   <dt><strong>Nome:</strong></dt>
-  <dd><%= @processo.nome %></dd>
+  <dd><%= @processo.nome if !@processo.nome.nil? %></dd>
 
   <dt><strong>Descrição:</strong></dt>
   <dd><%= @processo.descricao %></dd>
 
   <dt><strong>Criado em:</strong></dt>
-  <dd><%= @processo.setor.nome %></dd>
+  <dd><%= @processo.setor.nome if !@processo.setor_id.nil? %></dd>
 
   <% @processo.comentarios.each do |comentario| %>
       <dt><strong>Comentário:</strong></dt>

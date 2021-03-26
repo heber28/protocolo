@@ -3,6 +3,10 @@ require 'test_helper'
 class SetoresControllerTest < ActionController::TestCase
   setup do
     @setor = setores(:one)
+    @usuario1 = usuarios(:one)
+    @setor1 = setores(:one)
+    session[:usuario_id] = @usuario1.id
+    session[:setor_id] = @setor1.id
   end
 
   test "should get index" do

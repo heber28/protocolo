@@ -38,7 +38,7 @@
         <td style="width:80px"><%= processo.numero_git %></td>
         <td style="width:80px"><%= l processo.created_at, :format => :short %></td>
         <td style="width:450px"><%= processo.descricao %></td>
-        <td style="width:180px"><%= processo.setor.nome %></td>
+        <td style="width:180px"><%= processo.setor.nome if !processo.setor.nil? %></td>
         <td>
           <% if can? :edit, processo %>
               <%= link_to "Ver", processo_path(processo), :class => 'btn btn-mini' %>

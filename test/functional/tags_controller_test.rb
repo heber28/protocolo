@@ -2,13 +2,17 @@ require 'test_helper'
 
 class TagsControllerTest < ActionController::TestCase
   setup do
+    @usuario1 = usuarios(:one)
+    @setor1 = setores(:one)
+    session[:usuario_id] = @usuario1.id
+    session[:setor_id] = @setor1.id
     @tag = tags(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:Tags)
+    assert_not_nil assigns(:tags)
   end
 
   test "should get new" do

@@ -146,6 +146,7 @@ pt-BR:
         update: Atualizar Processo
       usuario:
         update: Update Usuario
+        create: Create Usuario
     links:
       new: Novo
       back: Voltar
@@ -279,6 +280,7 @@ pt-BR:
         administrador: Administrador
         login: Login
         pode_alterar_setor: Pode alterar setor
+        password: Password
       usuario_setor:
         setor: Setor
       comentario:
@@ -326,6 +328,10 @@ pt-BR:
           desativado: 
           nome: 
           password_confirmation: 
+        new:
+          desativado: 
+          nome: 
+          password_confirmation: 
     labels:
       processo:
         new:
@@ -346,6 +352,14 @@ pt-BR:
         usuario_setores:
           edit:
             setor: 
+          new:
+            setor: 
+        new:
+          administrador: 
+          autor: 
+          desativado: 
+          login: 
+          nome: 
     placeholders:
       processo:
         comentarios:
@@ -369,6 +383,11 @@ pt-BR:
           numero_git: 
       usuario:
         edit:
+          login: 
+          nome: 
+          password: 
+          password_confirmation: 
+        new:
           login: 
           nome: 
           password: 

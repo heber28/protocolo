@@ -1,7 +1,5 @@
 Protocolo::Application.routes.draw do
 
-  #resources :arquivos
-
   resources :notificacoes
 
   resources :tags

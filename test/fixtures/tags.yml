@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descricao: "Identificação do Condutor"
+
+two:
+  descricao: "Defesa da Autuação"
+
+three:
+  descricao: "Recurso Jari"
+
+four:
+  descricao: "Recurso Cetran"
+
+five:
+  descricao: "Processo Judicial"
+
+six: 
+  descricao: "Regularizacao"
+
+seven:
+  descricao: "Adendo"

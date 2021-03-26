@@ -2,35 +2,35 @@
 
 one:
   login: admin
-  password_digest: MyString
+  password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: true
   autor: true
   desativado: false
-  pode_alterar_setor: false
+  pode_alterar_setor: true
 two:
   login: user2
-  password_digest: MyString2
-  administrador: false
+  password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
+  administrador: true
   autor: true
   desativado: false
   pode_alterar_setor: true
 three:
   login: user3
-  password_digest: MyString3
+  password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: false
   autor: true
   desativado: false
   pode_alterar_setor: false
 four:
   login: user4
-  password_digest: MyString4
+  password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: false
   autor: false
   desativado: true
   pode_alterar_setor: false
 five:
   login: user5
-  password_digest: MyString5
+  password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: false
   autor: true
   desativado: false

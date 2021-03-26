@@ -16,6 +16,7 @@ class Usuario < ActiveRecord::Base
   validate :password_complexity
   accepts_nested_attributes_for :usuario_setores, allow_destroy: true
   before_save :antes_de_salvar
+  before_destroy :checar_comentario
 
   def antes_de_salvar
     self.nome = ApplicationController.helpers.formatar(nome)
@@ -46,6 +47,16 @@ class Usuario < ActiveRecord::Base
       params.delete :password_confirmation
     end
     super params
+  end
+
+  private
+
+  def checar_comentario
+    comentarios = Comentario.where('usuario_id = ?', self.id)
+    if comentarios.size > 0
+      self.errors[:comentarios] << "Não é possível excluir pois existem comentários feitos por este usuário"
+      return false
+    end
   end
 
 end

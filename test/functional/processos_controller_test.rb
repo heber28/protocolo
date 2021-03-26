@@ -3,6 +3,10 @@ require 'test_helper'
 class ProcessosControllerTest < ActionController::TestCase
   setup do
     @processo = processos(:one)
+    @usuario1 = usuarios(:one)
+    @setor1 = setores(:one)
+    session[:usuario_id] = @usuario1.id
+    session[:setor_id] = @setor1.id
   end
 
   test "should get index" do
@@ -18,7 +22,7 @@ class ProcessosControllerTest < ActionController::TestCase
 
   test "should create processo" do
     assert_difference('Processo.count') do
-      post :create, processo: {descricao: @processo.descricao, pessoa_id: @processo.pessoa_id, setor_id: @processo.setor_id, situacao: @processo.situacao, usuario_id: @processo.usuario_id}
+      post :create, processo: {descricao: 'descricao...', usuario_id: @usuario1.id, setor_id: @setor1.id, nome: 'Carlos Alberto da Silva'}
     end
 
     assert_redirected_to processo_path(assigns(:processo))
@@ -35,7 +39,7 @@ class ProcessosControllerTest < ActionController::TestCase
   end
 
   test "should update processo" do
-    put :update, id: @processo, processo: {descricao: @processo.descricao, pessoa_id: @processo.pessoa_id, setor_id: @processo.setor_id, situacao: @processo.situacao, usuario_id: @processo.usuario_id}
+    put :update, id: @processo, processo: {descricao: 'descricao...', usuario_id: @usuario1.id, setor_id: @setor1.id, nome: 'Aline Morais'}
     assert_redirected_to processo_path(assigns(:processo))
   end
 
