@@ -57,7 +57,8 @@ class UsuariosControllerTest < ActionController::TestCase
 
   test "should destroy usuario" do
     assert_difference('Usuario.count', -1) do
-      delete :destroy, id: @usuario1
+      @usuario5= usuarios(:five)
+      delete :destroy, id: @usuario5
     end
 
     assert_redirected_to usuarios_path

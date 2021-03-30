@@ -45,7 +45,8 @@ class SetoresControllerTest < ActionController::TestCase
 
   test "should destroy setor" do
     assert_difference('Setor.count', -1) do
-      delete :destroy, id: @setor
+      @setor7 = setores(:seven)
+      delete :destroy, id: @setor7
     end
 
     assert_redirected_to setores_path

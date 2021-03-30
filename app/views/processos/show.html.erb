@@ -18,11 +18,11 @@
   <dd><%= @processo.descricao %></dd>
 
   <dt><strong>Criado em:</strong></dt>
-  <dd><%= @processo.setor.nome if !@processo.setor_id.nil? %></dd>
+  <dd><%= @processo.setor.nome %></dd>
 
   <% @processo.comentarios.each do |comentario| %>
       <dt><strong>Comentário:</strong></dt>
-      <dd><%= comentario.descricao + ' (' + comentario.usuario.primeiro_nome + ' em ' + (l comentario.created_at) + ')' %></dd>
+      <dd><%= comentario.descricao.to_s + ' (' + comentario.usuario.primeiro_nome.to_s + ' em ' + (l comentario.created_at) + ')' %></dd>
   <% end %>
 
   <% if @processo.tramites.blank? %>
@@ -42,7 +42,7 @@
       <% end %>
       <dd>
         <% if current_user %>
-            <%= tramite.setor.nome + ' ' + ' (foi tramitado para cá por ' + tramite.usuario.primeiro_nome + ' em ' + (l tramite.created_at) + ')' %>
+            <%= tramite.setor.nome.to_s + ' ' + ' (foi tramitado para cá por ' + tramite.usuario.primeiro_nome.to_s + ' em ' + (l tramite.created_at) + ')' %>
         <% end %>
       </dd>
   <% end %>

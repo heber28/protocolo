@@ -23,7 +23,7 @@
   <% if f.object.usuario %>
     <% data = f.object.created_at ? (l f.object.created_at) : '' %>
     <% readonly = (can? :modify, @processo) ? false : true %>
-    <%= f.input :descricao, :as => :text, :label => 'Descrição', :input_html => {:rows => 3, :class => 'span6', :readonly => readonly}, :hint => f.object.usuario.nome + ' ' + data %>
+    <%= f.input :descricao, :as => :text, :label => 'Descrição', :input_html => {:rows => 3, :class => 'span6', :readonly => readonly}, :hint => f.object.usuario.nome.to_s + ' ' + data %>
   <% else %>
     <%= f.input :descricao, :as => :text, :label => 'Descrição', :input_html => {:rows => 3, :class => 'span6', :readonly => true} %>
   <% end %>

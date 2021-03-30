@@ -2,6 +2,7 @@
 
 one:
   login: admin
+  nome: Administrador
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: true
   autor: true
@@ -9,6 +10,7 @@ one:
   pode_alterar_setor: true
 two:
   login: user2
+  nome: Usuario2
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: true
   autor: true
@@ -16,6 +18,7 @@ two:
   pode_alterar_setor: true
 three:
   login: user3
+  nome: Usuario3
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: false
   autor: true
@@ -23,6 +26,7 @@ three:
   pode_alterar_setor: false
 four:
   login: user4
+  nome: Usuario4
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: false
   autor: false
@@ -30,6 +34,7 @@ four:
   pode_alterar_setor: false
 five:
   login: user5
+  nome: Usuario5
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
   administrador: false
   autor: true

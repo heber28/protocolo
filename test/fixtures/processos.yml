@@ -2,7 +2,7 @@
 
 one:
   descricao: 'Descrição 1'
-  usuario_id: 1
+  usuario: one
   setor_id: 1
   setor_id_atual: 1
   numero_git: '123'
@@ -13,9 +13,9 @@ one:
   
 two:
   descricao: 'Descrição 2'
-  usuario_id: 1
+  usuario: one
   setor_id: 1
-  setor_id_atual: 2
+  setor_id_atual: 1
   numero_git: '345'
   nome: 'Monica da Silva'
   cpf: '371.268.690-02'
@@ -24,9 +24,9 @@ two:
 
 three:
   descricao: 'Descrição 3'
-  usuario_id: 2
+  usuario: two
   setor_id: 2
-  setor_id_atual: 3
+  setor_id_atual: 2
   numero_git: '253'
   nome: 'Joaquim Barbosa'
   cpf: '191.240.530-07'
@@ -35,9 +35,9 @@ three:
 
 four:
   descricao: 'Descrição 4'
-  usuario_id: 3
+  usuario: three
   setor_id: 3
-  setor_id_atual: 4
+  setor_id_atual: 3
   numero_git: '254'
   nome: 'Sergio Mauricio'
   cpf: '275.224.880-60'
@@ -46,8 +46,8 @@ four:
 
 five:
   descricao: 'Descrição 5'
-  usuario_id: 4
-  setor_id: 2
+  usuario: four
+  setor_id: 4
   setor_id_atual: 4
   numero_git: '245'
   nome: 'Loja das Fechaduras'

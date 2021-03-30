@@ -1,25 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  processo_id: 1
+  processo: one
   setor_id_anterior: 1
   setor_id: 2
-  usuario_id: 1
+  usuario: one
 
 two:
-  processo_id: 1
+  processo: one
   setor_id_anterior: 2
   setor_id: 3
-  usuario_id: 1
+  usuario: one
 
 three:
-  processo_id: 2
+  processo: two
   setor_id_anterior: 1
-  setor_id: 3
-  usuario_id: 2
+  setor_id: 2
+  usuario: one
 
 four:
-  processo_id: 3
+  processo: three
   setor_id_anterior: 3
-  setor_id: 4
-  usuario_id: 2
+  setor_id: 2
+  usuario: one

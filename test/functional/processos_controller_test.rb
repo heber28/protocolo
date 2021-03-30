@@ -7,15 +7,19 @@ class ProcessosControllerTest < ActionController::TestCase
     @setor1 = setores(:one)
     session[:usuario_id] = @usuario1.id
     session[:setor_id] = @setor1.id
+    @current_user = @usuario1
+    @current_setor = @setor1
   end
 
   test "should get index" do
-    get :index
+    get :index, setor_id: @setor1.id
     assert_response :success
     assert_not_nil assigns(:processos)
   end
 
   test "should get new" do
+    current_user = Usuario.find(@usuario1.id)
+    current_setor = Setor.find(@setor1.id)
     get :new
     assert_response :success
   end

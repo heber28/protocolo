@@ -1,22 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   nome: "Apoio Jari"
 
 two:
+  id: 2
   nome: "Arquivo Geral"
 
 three:
+  id: 3
   nome: "Assessoria Juridica"
 
 four:
+  id: 4
   nome: "Coordenadoria de Multas"
 
 five:
+  id: 5
   nome: "Coordenadoria de Sistema Viario"
 
-six: 
+six:
+  id: 6 
   nome: "Coordenadoria de Transito"
 
 seven:
+  id: 7
   nome: "Coordenadoria Financeira"
