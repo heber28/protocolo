@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   login: admin
   nome: Administrador
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
@@ -9,6 +10,7 @@ one:
   desativado: false
   pode_alterar_setor: true
 two:
+  id: 2
   login: user2
   nome: Usuario2
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
@@ -17,6 +19,7 @@ two:
   desativado: false
   pode_alterar_setor: true
 three:
+  id: 3
   login: user3
   nome: Usuario3
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
@@ -25,6 +28,7 @@ three:
   desativado: false
   pode_alterar_setor: false
 four:
+  id: 4
   login: user4
   nome: Usuario4
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>
@@ -33,6 +37,7 @@ four:
   desativado: true
   pode_alterar_setor: false
 five:
+  id: 5
   login: user5
   nome: Usuario5
   password_digest: <%= BCrypt::Password.create('P@ssw0rd1') %>

@@ -1,25 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  processo: one
+  processo_id: 1
   setor_id_anterior: 1
   setor_id: 2
-  usuario: one
-
+  usuario_id: 1 
+  created_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
 two:
   processo: one
   setor_id_anterior: 2
   setor_id: 3
-  usuario: one
+  usuario_id: 1 
+  created_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
 
 three:
-  processo: two
+  processo_id: 2
   setor_id_anterior: 1
   setor_id: 2
-  usuario: one
+  usuario_id: 2
+  created_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>
 
 four:
-  processo: three
+  processo_id: 3
   setor_id_anterior: 3
   setor_id: 2
-  usuario: one
+  usuario_id: 1
+  created_at: <%= Time.now.strftime("%Y-%m-%d %H:%M:%S") %>

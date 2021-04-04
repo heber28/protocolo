@@ -1,8 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   descricao: 'Descrição 1'
-  usuario: one
+  usuario_id: 1
   setor_id: 1
   setor_id_atual: 1
   numero_git: '123'
@@ -12,8 +13,9 @@ one:
   data_tramite: '2021-01-01'
   
 two:
+  id: 2
   descricao: 'Descrição 2'
-  usuario: one
+  usuario_id: 1
   setor_id: 1
   setor_id_atual: 1
   numero_git: '345'
@@ -23,8 +25,9 @@ two:
   data_tramite: '2021-01-02'
 
 three:
+  id: 3
   descricao: 'Descrição 3'
-  usuario: two
+  usuario_id: 2
   setor_id: 2
   setor_id_atual: 2
   numero_git: '253'
@@ -34,8 +37,9 @@ three:
   data_tramite: '2021-01-02'
 
 four:
+  id: 4
   descricao: 'Descrição 4'
-  usuario: three
+  usuario_id: 3
   setor_id: 3
   setor_id_atual: 3
   numero_git: '254'
@@ -45,8 +49,9 @@ four:
   data_tramite: '2021-01-02'
 
 five:
+  id: 5
   descricao: 'Descrição 5'
-  usuario: four
+  usuario_id: 4
   setor_id: 4
   setor_id_atual: 4
   numero_git: '245'

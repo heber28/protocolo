@@ -1,45 +1,45 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  usuario: one
-  setor: one
+  usuario_id: 1
+  setor_id: 1
 
 two:
-  usuario: one
-  setor: two
+  usuario_id: 1
+  setor_id: 2
 
 three:
-  usuario: one
-  setor: three
+  usuario_id: 1
+  setor_id: 3
 
 four:
-  usuario: two
-  setor: one
+  usuario_id: 1
+  setor_id: 4
 
 five:
-  usuario: two
-  setor: two
+  usuario_id: 2
+  setor_id: 1
 
 six:
-  usuario: two
-  setor: three
+  usuario_id: 2
+  setor_id: 3
 
 seven:
-  usuario: three
-  setor: one
+  usuario_id: 2
+  setor_id: 4
 
 eight:
-  usuario: four
-  setor: one
+  usuario_id: 3
+  setor_id: 1
 
 nine:
-  usuario: four
-  setor: two
+  usuario_id: 3
+  setor_id: 3
 
 ten:
-  usuario: four
-  setor: three
+  usuario_id: 4
+  setor_id: 3
 
 eleven:
-  usuario: four
-  setor: five
+  usuario_id: 4
+  setor_id: 4
