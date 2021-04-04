@@ -1,21 +1,21 @@
 <%= simple_nested_form_for @processo, :html => {:class => 'form-horizontal'} do |f| %>
   <% readonly = (can? :modify, @processo) ? false : true %>
+  <% readonly == true ? disabled = "disabled" : disabled = '' %>
   <%= f.input :numero_git, :label => 'Número do Git', :input_html => {:readonly => readonly} %>
  
-  <%= f.input :nome, :input_html => {:class => 'span6'} %>
+  <%= f.input :nome, :input_html => {:class => 'span6', :readonly => readonly} %>
   <div class="controls"><span id="validacao_cpf"></span></div>
-  <%= f.input :cpf %>
+  <%= f.input :cpf, :input_html => {:readonly => readonly} %>
   <div class="controls"><span id="validacao_cnpj"></span></div>
-  <%= f.input :cnpj %>
+  <%= f.input :cnpj, :input_html => {:readonly => readonly} %>
 
   <div class="control-group select required processo_tag_ids">
     <label class="select control-label" for="processo_tag_ids">
       Tag
     </label>
-
     <div class="controls">
       <% if f.object.usuario %>
-        <%= f.collection_select :tag_ids, Tag.order(:descricao), :id, :descricao, {}, {multiple: :true, class: :span6} %>
+        <%= f.collection_select :tag_ids, Tag.order(:descricao), :id, :descricao, {}, {multiple: :true, class: :span6, :readonly => readonly, :disabled => disabled} %>
       <% end %>
     </div>
   </div>
@@ -63,7 +63,7 @@
     <% if can? :destroy, t.object %>
       <%= t.association :setor, :label => 'Setor destino', :label_method => :nome, :value_method => :id, :include_blank => true, :input_html => {:readonly => readonly, :class => 'span5'}, :prompt => "Selecione um setor", :hint => t.link_to_remove('Excluir') + ' ' + u + ' ' + d %>
     <% else %>
-      <%= t.association :setor, :label => 'Setor destino', :label_method => :nome, :value_method => :id, :include_blank => true, :input_html => {:readonly => readonly, :class => 'span5'}, :prompt => "Selecione um setor", :hint => u + ' ' + d %>
+      <%= t.association :setor, :label => 'Setor destino', :label_method => :nome, :value_method => :id, :include_blank => true, :input_html => {:readonly => readonly, :disabled => "disabled", :class => 'span5'}, :prompt => "Selecione um setor", :hint => u + ' ' + d %>
     <% end %>
   <% end %>
   <% if current_user.administrador? %>
