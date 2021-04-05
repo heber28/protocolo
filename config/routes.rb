@@ -2,8 +2,6 @@ Protocolo::Application.routes.draw do
 
   resources :notificacoes
 
-  resources :tags
-
   get 'pesquisar', to: 'processos#pesquisar', as: 'pesquisar'
 
   get 'visualizar', to: 'processos#visualizar', as: 'visualizar'

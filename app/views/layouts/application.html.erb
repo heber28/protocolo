@@ -19,13 +19,12 @@
           <li class="<%= 'active' if params[:controller] == 'processos' %>"><%= link_to "Processos", processos_path(:setor_id => current_setor.id) %></li>
           <li class="<%= 'active' if params[:controller] == 'tramites' %>"><%= link_to "Remessa", remessa_path %></li>
           <% if current_user.administrador %>
-            <li class="dropdown <%= 'active' if params[:controller] == 'usuarios' or params[:controller] == 'tags' %>">
+            <li class="dropdown <%= 'active' if params[:controller] == 'usuarios' %>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros
                 <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <% if current_user.administrador %>
                   <li><%= link_to "Usuários", usuarios_path %></li>
-                  <li><%= link_to "Tags", tags_path %></li>
                 <% end %>
               </ul>
             </li>

@@ -1,8 +1,0 @@
-<%= simple_form_for @tag, :html => {:class => 'form-horizontal'} do |f| %>
-    <%= f.input :descricao, :input_html => {:class => 'input-xxlarge'} %>
-    <div class="form-actions">
-      <%= f.button :submit, :class => 'btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  tags_path, :class => 'btn' %>
-    </div>
-<% end %>

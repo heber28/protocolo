@@ -167,8 +167,6 @@ jQuery ->
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
 
-  $('#processo_tag_ids').chosen()
-
   $('body').on 'keyup', '.uppercase', (event) ->
     #$(this).val $(this).val().toUpperCase()
     $(this).val cleanUpSpecialChars($(this).val())
