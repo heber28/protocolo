@@ -277,6 +277,7 @@ pt-BR:
         nome: Nome
         cnpj: Cnpj
         cpf: Cpf
+        assunto: Assunto
       usuario:
         autor: Autor
         desativado: Desativado
@@ -321,6 +322,7 @@ pt-BR:
           cnpj: 
           cpf: 
           numero_git: 
+          assunto: 
         edit:
           cnpj: 
           cpf: 
@@ -342,6 +344,7 @@ pt-BR:
           cnpj: 
           cpf: 
           nome: 
+          assunto: 
         edit:
           cnpj: 
           cpf: 
@@ -378,6 +381,7 @@ pt-BR:
           numero_protocolo: Número do Protocolo
           cnpj: 
           numero_git: 
+          assunto: 
         edit:
           cnpj: 
           cpf: 

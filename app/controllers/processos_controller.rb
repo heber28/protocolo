@@ -7,7 +7,7 @@ class ProcessosController < ApplicationController
   def index
     p = Hash.new
     params[:setor_id].blank? ? p[:setor_id] = '' : p[:setor_id] = params[:setor_id]
-    params[:tag_id].blank? ? p[:tag_id] = '' : p[:tag_id] = params[:tag_id]
+    params[:assunto].blank? ? p[:assunto] = '' : p[:assunto] = params[:assunto]
     params[:numero_git].blank? ? p[:numero_git] = '' : p[:numero_git] = params[:numero_git]
     params[:nome].blank? ? p[:nome] = '' : p[:nome] = params[:nome]
     params[:cpf].blank? ? p[:cpf] = '' : p[:cpf] = params[:cpf]

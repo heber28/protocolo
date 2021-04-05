@@ -1,24 +1,46 @@
 <%= simple_nested_form_for @processo, :html => {:class => 'form-horizontal'} do |f| %>
   <% readonly = (can? :modify, @processo) ? false : true %>
   <% readonly == true ? disabled = "disabled" : disabled = '' %>
+
   <%= f.input :numero_git, :label => 'Número do Git', :input_html => {:readonly => readonly} %>
  
   <%= f.input :nome, :input_html => {:class => 'span6', :readonly => readonly} %>
   <div class="controls"><span id="validacao_cpf"></span></div>
+
   <%= f.input :cpf, :input_html => {:readonly => readonly} %>
   <div class="controls"><span id="validacao_cnpj"></span></div>
+
   <%= f.input :cnpj, :input_html => {:readonly => readonly} %>
 
-  <div class="control-group select required processo_tag_ids">
-    <label class="select control-label" for="processo_tag_ids">
-      Tag
-    </label>
-    <div class="controls">
-      <% if f.object.usuario %>
-        <%= f.collection_select :tag_ids, Tag.order(:descricao), :id, :descricao, {}, {multiple: :true, class: :span6, :readonly => readonly, :disabled => disabled} %>
-      <% end %>
-    </div>
-  </div>
+  <% assuntos =
+       [['Adendo', 'Adendo'],
+        ['Adendo CNH', 'Adendo CNH'],
+        ['Administrativo', 'Administrativo'],
+        ['Auditoria', 'Auditoria'],
+        ['CNH', 'CNH'],
+        ['Defesa da Autuacao', 'Defesa da Autuacao'],
+        ['Desvinculacao', 'Desvinculacao'],
+        ['Divida Ativa', 'Divida Ativa' ],
+        ['Execucao Judicial', 'Execucao Judicial'],
+        ['Identificacao do Condutor', 'Identificacao do Condutor'],
+        ['Permissionario Penalizado', 'Permissionario Penalizado'],
+        ['Processo Judicial', 'Processo Judicial'],
+        ['Recurso Cetran', 'Recurso Cetran'],
+        ['Recurso Cetran - Cassacao', 'Recurso Cetran - Cassacao'],
+        ['Recurso Cetran - Suspensao', 'Recurso Cetran - Suspensao'],
+        ['Recurso Jari', 'Recurso Jari'],
+        ['Recurso Jari - Cassacao', 'Recurso Jari - Cassacao'],
+        ['Recurso Jari - Suspensao', 'Recurso Jari - Suspensao'],
+        ['Recurso Defesa - Cassacao', 'Recurso Defesa - Cassacao'],
+        ['Recurso Defesa - Suspensao', 'Recurso Defesa - Suspensao'],
+        ['Regularizacao', 'Regularizacao'],
+        ['Restituicao', 'Restituicao'],
+        ['RENAINF', 'RENAINF'],
+        ['Solicitacao de Copia', 'Solicitacao de Copia']
+       ]
+  %>
+  <%= f.input :assunto, :collection => assuntos, :input_html => {'data-placeholder' => 'Selecione o assunto'} %>
+  
 
   <% if f.object.usuario %>
     <% data = f.object.created_at ? (l f.object.created_at) : '' %>

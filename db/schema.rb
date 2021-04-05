@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140725171551) do
+ActiveRecord::Schema.define(:version => 20210404193104) do
 
   create_table "arquivos", :force => true do |t|
     t.integer  "processo_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20140725171551) do
     t.datetime "data_tramite"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "assunto"
   end
 
   add_index "processos", ["setor_id"], :name => "index_processos_on_setor_id"
