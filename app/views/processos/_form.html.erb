@@ -2,7 +2,7 @@
   <% readonly = (can? :modify, @processo) ? false : true %>
   <% readonly == true ? disabled = "disabled" : disabled = '' %>
 
-  <%= f.input :numero_git, :label => 'Número do Git', :input_html => {:readonly => readonly} %>
+  <%= f.input :numero_git, :label => 'Git', :input_html => {:readonly => readonly} %>
  
   <%= f.input :nome, :input_html => {:class => 'span6', :readonly => readonly} %>
   <div class="controls"><span id="validacao_cpf"></span></div>
@@ -39,8 +39,11 @@
         ['Solicitacao de Copia', 'Solicitacao de Copia']
        ]
   %>
-  <%= f.input :assunto, :collection => assuntos, :input_html => {'data-placeholder' => 'Selecione o assunto'} %>
-  
+  <% if disabled == '' %>
+    <%= f.input :assunto, :collection => assuntos, :input_html => {'data-placeholder' => 'Selecione o assunto', :readonly => readonly} %>
+  <% else %>
+    <%= f.input :assunto, :collection => assuntos, :input_html => {'data-placeholder' => 'Selecione o assunto', :readonly => readonly, :disabled => disabled} %>
+  <% end %>
 
   <% if f.object.usuario %>
     <% data = f.object.created_at ? (l f.object.created_at) : '' %>

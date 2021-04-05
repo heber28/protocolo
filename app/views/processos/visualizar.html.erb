@@ -8,10 +8,8 @@
   <dt><strong>Pessoa:</strong></dt>
   <dd><%= @processo.nome %></dd>
 
-  <dt><strong>Tag:</strong></dt>
-  <% @processo.tags.each do |tag| %>
-      <dd><%= tag.descricao %></dd>
-  <% end %>
+  <dt><strong>Assunto:</strong></dt>
+  <dd><%= @processo.assunto %></dd>
 
   <dt><strong>Descrição:</strong></dt>
   <dd><%= @processo.descricao %></dd>

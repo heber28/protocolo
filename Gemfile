@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem "localeapp" 
+#gem "localeapp" 
 
 gem 'byebug'
 

@@ -1,6 +1,7 @@
 class CreateProcessos < ActiveRecord::Migration
   def change
     create_table :processos do |t|
+      t.string :assunto
       t.text :descricao
       t.integer :usuario_id
       t.integer :setor_id # setor onde foi criado o processo

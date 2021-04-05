@@ -36,7 +36,7 @@
       </ul>
       <p class="navbar-text pull-right no-print">
         <% if current_user %>
-          <%= link_to current_user.nome, edit_usuario_path(current_user) %> |
+          <%= link_to current_user.nome + ' - ' + current_setor.nome, edit_usuario_path(current_user) %> |
           <%= link_to "Log Out", logout_path %>
         <% else %>
           <%= link_to "Login", login_path %>

@@ -4,11 +4,8 @@ class Processo < ActiveRecord::Base
   belongs_to :usuario
   has_many :comentarios, :dependent => :delete_all
   has_many :tramites, :dependent => :delete_all
-  has_many :processo_tags, :dependent => :delete_all
-  has_many :tags, through: :processo_tags
   has_many :arquivos, :dependent => :delete_all
-  attr_accessible :descricao, :numero_git, :setor_id, :setor_id_atual, :usuario_id, :created_at, :comentarios_attributes, :tramites_attributes, :tag_ids, :tag_tokens, :data_tramite, :nome, :cpf, :cnpj, :assunto, :arquivos_attributes
-  attr_reader :tag_tokens
+  attr_accessible :descricao, :numero_git, :setor_id, :setor_id_atual, :usuario_id, :created_at, :comentarios_attributes, :tramites_attributes, :data_tramite, :nome, :cpf, :cnpj, :assunto, :arquivos_attributes
   accepts_nested_attributes_for :comentarios, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :tramites, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :arquivos, reject_if: :all_blank, allow_destroy: true
@@ -21,10 +18,6 @@ class Processo < ActiveRecord::Base
   def antes_de_salvar
     self.nome = ApplicationController.helpers.formatar(nome)
     self.descricao = ApplicationController.helpers.formatar(descricao)
-  end
-
-  def tag_tokens=(ids)
-    self.tag_ids = ids.split(",")
   end
 
   def self.procurar(p, page)
@@ -60,14 +53,6 @@ class Processo < ActiveRecord::Base
     paginate :per_page => 10, :page => page,
              :conditions => ["id like ? or numero_git like ? or descricao like ?", "%#{busca}%", "%#{busca}%", "%#{busca}%"],
              :order => ['id DESC']
-  end
-
-  def lista_tags
-    arr = []
-    processo_tags.each do |item|
-      arr.push(item.tag.descricao)
-    end
-    arr.to_sentence
   end
 
   private
