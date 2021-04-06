@@ -91,6 +91,7 @@
       <%= t.association :setor, :label => 'Setor destino', :label_method => :nome, :value_method => :id, :include_blank => true, :input_html => {:readonly => readonly, :disabled => "disabled", :class => 'span5'}, :prompt => "Selecione um setor", :hint => u + ' ' + d %>
     <% end %>
   <% end %>
+
   <% if current_user.administrador? %>
     <%= f.link_to_add "Adicionar trâmite", :tramites %>
   <% elsif @processo.tramites.size == 0 and @processo.setor_id == current_setor.id %>
@@ -103,9 +104,11 @@
       <% end %>
     <% end %>
   <% end %>
-  <br/><br/>
+  <br/>
+  <br/>
+
   <%= f.fields_for :arquivos do |a| %>
-      <div class="controls">
+      <div class="controls">        
         <%= a.file_field :arquivo, multiple: false, accept:'image/*', :input_html => {:class => 'span6'} %>
         <%= File.basename(a.object.arquivo.to_s) %>
         <%= a.link_to_remove('Excluir') %><br>

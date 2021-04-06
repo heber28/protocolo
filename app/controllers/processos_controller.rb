@@ -96,7 +96,13 @@ class ProcessosController < ApplicationController
       anterior = tramite.setor_id
       tramite.save
     end
-
+    @processo.arquivos.each do |arquivo|
+      if arquivo.new_record?
+        arquivo.usuario_id = current_user.id
+        arquivo.save
+      end
+    end
+   
     @processo.setor_id = current_setor.id
 
     if @processo.tramites.size == 0
