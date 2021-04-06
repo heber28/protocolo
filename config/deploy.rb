@@ -2,7 +2,7 @@ require "bundler/capistrano"
 require 'capistrano/log_with_awesome'
 #require 'capistrano/local_precompile'
 
-server "protocolo.cmtu.info", :web, :app, :db, primary: true
+server "200.233.108.171", :web, :app, :db, primary: true
 
 set :application, "protocolo"
 set :user, "deployer"
