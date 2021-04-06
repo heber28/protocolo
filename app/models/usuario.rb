@@ -3,6 +3,7 @@ class Usuario < ActiveRecord::Base
   has_many :processos
   has_many :comentarios
   has_many :tramites
+  has_many :arquivos
   belongs_to :setor
   has_many :usuario_setores
   has_secure_password

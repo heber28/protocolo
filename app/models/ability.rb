@@ -66,6 +66,20 @@ class Ability
         end
       end
 
+      can :create, Arquivo
+
+      can :update, Arquivo do |arquivo|        
+        arquivo.try(:usuario) == usuario
+      end
+
+      can :destroy, Arquivo do |arquivo|
+        if arquivo.usuario_id.nil?
+          true
+        else          
+          arquivo.try(:usuario) == usuario
+        end
+      end
+
       can :read, Setor
 
       can :pesquisar, Processo

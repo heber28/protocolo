@@ -94,12 +94,11 @@ class ProcessosController < ApplicationController
       end
       tramite.setor_id_anterior = anterior
       anterior = tramite.setor_id
-      tramite.save
     end
+
     @processo.arquivos.each do |arquivo|
       if arquivo.new_record?
         arquivo.usuario_id = current_user.id
-        arquivo.save
       end
     end
    
@@ -142,12 +141,17 @@ class ProcessosController < ApplicationController
       end
       tramite.setor_id_anterior = anterior
       anterior = tramite.setor_id
-      tramite.save
     end
     if @processo.tramites.size == 0
       @processo.setor_id_atual = @processo.setor_id
     else
       @processo.setor_id_atual = @processo.tramites.last.setor_id
+    end
+
+    @processo.arquivos.each do |arquivo|
+      if arquivo.new_record?
+        arquivo.usuario_id = current_user.id
+      end
     end
 
     respond_to do |format|

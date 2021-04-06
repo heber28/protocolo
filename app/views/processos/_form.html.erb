@@ -108,10 +108,22 @@
   <br/>
 
   <%= f.fields_for :arquivos do |a| %>
-      <div class="controls">        
-        <%= a.file_field :arquivo, multiple: false, accept:'image/*', :input_html => {:class => 'span6'} %>
-        <%= File.basename(a.object.arquivo.to_s) %>
-        <%= a.link_to_remove('Excluir') %><br>
+      <div class="controls">      
+        <% if a.object.usuario %>
+          <% d = a.object.created_at ? (l a.object.created_at) : '' %>
+          <% u = a.object.usuario.nome %>
+          <% disabled = (can? :update, a.object) ? false : true %>
+        <% else %>
+          <% disabled = false %>
+          <% d = '' %>
+          <% u = '' %>
+        <% end %>
+        <%= a.file_field :arquivo, multiple: false, accept:'image/*', :disabled => disabled, :input_html => {:class => 'span6'} %>
+        <%= File.basename(a.object.arquivo.to_s) + ' ' + u + ' '  + d %>
+        <% if disabled == false %>
+          <%= a.link_to_remove('Excluir') %>
+        <% end %>  
+        <br>
       </div>
   <% end %>
   <%= f.link_to_add "Adicionar arquivo", :arquivos %>
