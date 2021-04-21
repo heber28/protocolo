@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20140725171551) do
 
-  create_table "arquivos", :force => true do |t|
+  create_table "anexos", :force => true do |t|
     t.integer  "processo_id"
     t.string   "arquivo"
     t.integer  "usuario_id"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(:version => 20140725171551) do
     t.datetime "updated_at",  :null => false
   end
 
-  add_index "arquivos", ["processo_id"], :name => "index_arquivos_on_processo_id"
-  add_index "arquivos", ["usuario_id"], :name => "index_arquivos_on_usuario_id"
+  add_index "anexos", ["processo_id"], :name => "index_anexos_on_processo_id"
+  add_index "anexos", ["usuario_id"], :name => "index_anexos_on_usuario_id"
 
   create_table "comentarios", :force => true do |t|
     t.text     "descricao"

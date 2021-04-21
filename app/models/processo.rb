@@ -4,11 +4,11 @@ class Processo < ActiveRecord::Base
   belongs_to :usuario
   has_many :comentarios, :dependent => :delete_all
   has_many :tramites, :dependent => :delete_all
-  has_many :arquivos, :dependent => :delete_all
-  attr_accessible :descricao, :numero_git, :setor_id, :setor_id_atual, :usuario_id, :created_at, :comentarios_attributes, :tramites_attributes, :data_tramite, :nome, :cpf, :cnpj, :assunto, :arquivos_attributes
+  has_many :anexos, :dependent => :delete_all
+  attr_accessible :descricao, :numero_git, :setor_id, :setor_id_atual, :usuario_id, :created_at, :comentarios_attributes, :tramites_attributes, :data_tramite, :nome, :cpf, :cnpj, :assunto, :anexos_attributes
   accepts_nested_attributes_for :comentarios, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :tramites, reject_if: :all_blank, allow_destroy: true
-  accepts_nested_attributes_for :arquivos, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :anexos, reject_if: :all_blank, allow_destroy: true
   validates_presence_of :nome, :message => "O nome precisa ser preenchido"
 
   #before_destroy :checar_tramite

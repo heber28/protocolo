@@ -8,7 +8,7 @@ Protocolo::Application.routes.draw do
 
   get 'remessa', to: 'tramites#remessa', as: 'remessa'
 
-  get 'download', to: 'arquivos#download', as: 'download'
+  get 'download', to: 'anexos#download', as: 'download'
 
   resources :usuarios
 

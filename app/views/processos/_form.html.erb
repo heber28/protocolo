@@ -107,7 +107,7 @@
   <br/>
   <br/>
 
-  <%= f.fields_for :arquivos do |a| %>
+  <%= f.fields_for :anexos do |a| %>
       <div class="controls">      
         <% if a.object.usuario %>
           <% d = a.object.created_at ? (l a.object.created_at) : '' %>
@@ -126,7 +126,7 @@
         <br>
       </div>
   <% end %>
-  <%= f.link_to_add "Adicionar arquivo", :arquivos %>
+  <%= f.link_to_add "Adicionar anexo", :anexos %>
 
   <script>
       $('body').on('focus', 'input.datepicker', function () {

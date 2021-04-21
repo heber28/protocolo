@@ -96,9 +96,9 @@ class ProcessosController < ApplicationController
       anterior = tramite.setor_id
     end
 
-    @processo.arquivos.each do |arquivo|
-      if arquivo.new_record?
-        arquivo.usuario_id = current_user.id
+    @processo.anexos.each do |anexo|
+      if anexo.new_record?
+        anexo.usuario_id = current_user.id
       end
     end
    
@@ -148,9 +148,9 @@ class ProcessosController < ApplicationController
       @processo.setor_id_atual = @processo.tramites.last.setor_id
     end
 
-    @processo.arquivos.each do |arquivo|
-      if arquivo.new_record?
-        arquivo.usuario_id = current_user.id
+    @processo.anexos.each do |anexo|
+      if anexo.new_record?
+        anexo.usuario_id = current_user.id
       end
     end
 

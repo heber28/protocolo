@@ -1,4 +1,4 @@
-class Arquivo < ActiveRecord::Base
+class Anexo < ActiveRecord::Base
   attr_accessible :arquivo, :processo_id, :usuario_id
   belongs_to :processo
   belongs_to :usuario

@@ -50,8 +50,8 @@
       </dd>
   <% end %>
 
-  <% @processo.arquivos.each do |a| %>
-      <dt><strong>Arquivo:</strong></dt>
+  <% @processo.anexos.each do |a| %>
+      <dt><strong>Anexo:</strong></dt>
       <dd>
         <%= link_to a.nome, download_path(id: a.id) %>
       </dd>

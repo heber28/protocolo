@@ -66,17 +66,17 @@ class Ability
         end
       end
 
-      can :create, Arquivo
+      can :create, Anexo
 
-      can :update, Arquivo do |arquivo|        
-        arquivo.try(:usuario) == usuario
+      can :update, Anexo do |anexo|        
+        anexo.try(:usuario) == usuario
       end
 
-      can :destroy, Arquivo do |arquivo|
-        if arquivo.usuario_id.nil?
+      can :destroy, Anexo do |anexo|
+        if anexo.usuario_id.nil?
           true
         else          
-          arquivo.try(:usuario) == usuario
+          anexo.try(:usuario) == usuario
         end
       end
 
