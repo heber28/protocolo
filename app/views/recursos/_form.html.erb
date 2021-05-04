@@ -1,0 +1,42 @@
+<%= simple_form_for(@recurso) do |f| %>
+<%= f.error_notification %>
+
+<div class="form-inputs">
+      <%= f.input :numero_auto_infracao %>
+      <%= f.input :email_para_retorno %>
+
+      <label class="string optional control-label" for="arquivo_notificacao">Notificação do auto de infração</label>
+      <div class="controls">
+        <%= f.file_field :arquivo_notificacao, multiple: false, accept:'image/*', :input_html => {:id => 'arquivo_notificacao', :class => 'span6'} %>
+      </div>
+      <br>
+
+      <label class="string optional control-label" for="arquivo_recurso">Recurso</label>
+      <div class="controls">
+        <%= f.file_field :arquivo_recurso, multiple: false, accept:'image/*', :input_html => {:id => 'arquivo_recurso', :class => 'span6'} %>
+      </div>
+      <br>
+
+      <label class="string optional control-label" for="arquivo_cnh">Cnh</label>
+      <div class="controls">
+        <%= f.file_field :arquivo_cnh, multiple: false, accept:'image/*', :input_html => {:id => 'arquivo_cnh', :class => 'span6'} %>
+      </div>
+      <br>
+
+      <label class="string optional control-label" for="arquivo_crlv">Crlv</label>
+      <div class="controls">
+        <%= f.file_field :arquivo_crlv, multiple: false, accept:'image/*', :input_html => {:id => 'arquivo_crlv', :class => 'span6'} %>
+      </div>
+      <br>
+
+      <label class="string optional control-label" for="arquivo_procuracao">Procuração</label>
+      <div class="controls">
+        <%= f.file_field :arquivo_procuracao, multiple: false, accept:'image/*', :input_html => {:id => 'arquivo_procuracao', :class => 'span6'} %>
+      </div>
+      <br>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
+<% end %>

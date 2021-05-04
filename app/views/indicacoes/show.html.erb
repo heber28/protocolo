@@ -1,0 +1,43 @@
+<p>
+  <b>Numero auto infracao:</b>
+  <%= @indicacao.numero_auto_infracao %>
+</p>
+
+<p>
+  <b>Email para retorno:</b>
+  <%= @indicacao.email_para_retorno %>
+</p>
+
+<p>
+  <b>Notificação do auto de infração preenchida:</b>
+  <%= @indicacao.notificacao.to_s %>
+</p>
+
+<p>
+  <b>Cnh do condutor infrator:</b>
+  <%= @indicacao.cnh_condutor_infrator.to_s %>
+</p>
+
+<p>
+  <b>Arquivo doc proprietario:</b>
+  <%= @indicacao.doc_proprietario.to_s %>
+</p>
+
+<p>
+  <b>Arquivo contrato social:</b>
+  <%= @indicacao.contrato_social.to_s %>
+</p>
+
+<p>
+  <b>Arquivo procuracao:</b>
+  <%= @indicacao.procuracao.to_s %>
+</p>
+
+<p>
+  <b>Arquivo contrato responsabilidade:</b>
+  <%= @indicacao.contrato_responsabilidade.to_s %>
+</p>
+
+
+<%= link_to 'Editar', edit_indicacao_path(@indicacao) %> |
+<%= link_to 'Voltar', indicacoes_path(numero_auto_infracao: @indicacao.numero_auto_infracao) %>

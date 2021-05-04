@@ -1,0 +1,38 @@
+<h1>Recursos de Autos de Infração</h1>
+
+<form>  
+  <div class="well">
+    <div class="row">
+      <div class="span2">
+        Número do Auto de Infração
+      </div>
+      <div class="span3">
+        <%= text_field_tag :numero_auto_infracao, params[:numero_auto_infracao], :class => 'span3' %>
+      </div>
+      &nbsp;
+      <button type="submit" class="btn btn-primary">Pesquisar</button>
+    </div>
+  </div>
+</form>
+
+<% if @recursos.size > 0 %>
+  <table>
+    <tr>
+      <th>Número do auto de infração</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @recursos.each do |recurso| %>
+    <tr>
+      <td><%= recurso.numero_auto_infracao %></td>
+      <td><%= link_to 'Ver', recurso %>&nbsp;&nbsp;</td>
+      <td><%= link_to 'Editar', edit_recurso_path(recurso) %>&nbsp;&nbsp;</td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>
+
+<br />
+
+<%= link_to 'Fazer Novo Recurso de Auto de Infração', new_recurso_path, {style: 'font-size:large'} %>

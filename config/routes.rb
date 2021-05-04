@@ -1,5 +1,13 @@
 Protocolo::Application.routes.draw do
 
+  resources :recursos
+
+
+  get "pages/inicial"
+
+  resources :indicacoes
+
+
   resources :notificacoes
 
   get 'pesquisar', to: 'processos#pesquisar', as: 'pesquisar'
@@ -73,7 +81,7 @@ Protocolo::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
-  root :to => 'processos#pesquisar'
+  root :to => 'pages#inicial'
 
   #root :to => 'clients#index'
   # See how all your routes lay out with "rake routes"

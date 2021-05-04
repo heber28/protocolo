@@ -1,0 +1,36 @@
+<h1>Indicação de Condutor</h1>
+
+<form>  
+  <div class="well">
+    <div class="row">
+      <div class="span2">
+        Número do Auto de Infração
+      </div>
+      <div class="span3">
+        <%= text_field_tag :numero_auto_infracao, params[:numero_auto_infracao], :class => 'span3' %>
+      </div>
+      &nbsp;
+      <button type="submit" class="btn btn-primary">Pesquisar</button>
+    </div>
+  </div>
+</form>
+
+<% if @indicacoes.size > 0 %>
+<table>
+  <tr>
+    <th>Número do Auto de Infração</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @indicacoes.each do |indicacao| %>
+    <tr>
+      <td><%= indicacao.numero_auto_infracao %></td>
+      <td><%= link_to 'Ver', indicacao %>&nbsp;&nbsp;</td>
+      <td><%= link_to 'Editar', edit_indicacao_path(indicacao) %>&nbsp;&nbsp;</td>
+    </tr>
+  <% end %>
+</table>
+<br />
+<% end %>
+<br />
+<%= link_to 'Fazer Nova Indicação de Condutor', new_indicacao_path(numero_auto_infracao: params[:numero_auto_infracao]), {style: 'font-size:large'} %>

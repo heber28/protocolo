@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140725171551) do
+ActiveRecord::Schema.define(:version => 20210430182029) do
 
   create_table "anexos", :force => true do |t|
     t.integer  "processo_id"
@@ -35,6 +35,19 @@ ActiveRecord::Schema.define(:version => 20140725171551) do
   add_index "comentarios", ["processo_id"], :name => "index_comentarios_on_processo_id"
   add_index "comentarios", ["usuario_id"], :name => "index_comentarios_on_usuario_id"
 
+  create_table "indicacoes", :force => true do |t|
+    t.string   "numero_auto_infracao"
+    t.string   "arquivo_notificacao"
+    t.string   "arquivo_cnh_condutor_infrator"
+    t.string   "arquivo_doc_proprietario"
+    t.string   "arquivo_contrato_social"
+    t.string   "arquivo_procuracao"
+    t.string   "arquivo_contrato_responsabilidade"
+    t.string   "email_para_retorno"
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+  end
+
   create_table "processos", :force => true do |t|
     t.string   "assunto"
     t.text     "descricao"
@@ -53,6 +66,18 @@ ActiveRecord::Schema.define(:version => 20140725171551) do
   add_index "processos", ["setor_id"], :name => "index_processos_on_setor_id"
   add_index "processos", ["setor_id_atual"], :name => "index_processos_on_setor_id_atual"
   add_index "processos", ["usuario_id"], :name => "index_processos_on_usuario_id"
+
+  create_table "recursos", :force => true do |t|
+    t.string   "numero_auto_infracao"
+    t.string   "email_para_retorno"
+    t.string   "arquivo_notificacao"
+    t.string   "arquivo_recurso"
+    t.string   "arquivo_cnh"
+    t.string   "arquivo_crlv"
+    t.string   "arquivo_procuracao"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "setores", :force => true do |t|
     t.string   "nome"

@@ -30,7 +30,8 @@
             </li>
           <% end %>
         <% else %>
-          <li id="pesquisa_processos"><%= link_to "Pesquisa de Processos", pesquisar_path %></li>
+          <li class="<%= 'active' if params[:controller] == 'indicacoes' %>"><%= link_to "Indicação de Condutor", indicacoes_path %></li>
+          <li class="<%= 'active' if params[:controller] == 'recursos' %>"><%= link_to "Recurso de Auto de Infração", recursos_path %></li>
         <% end %>
       </ul>
       <p class="navbar-text pull-right no-print">

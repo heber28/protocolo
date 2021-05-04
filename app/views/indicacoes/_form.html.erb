@@ -1,0 +1,47 @@
+<%= simple_form_for(@indicacao) do |f| %>
+<%= f.error_notification %>
+
+<div class="form-inputs">
+      <%= f.input :numero_auto_infracao %>
+      
+      <%= f.input :email_para_retorno %>
+
+      <label class="string optional control-label" for="arquivo_cnh_proprietario">Notificação do auto de infração preenchida</label>
+      <div class="controls">        
+        <%= f.file_field :arquivo_notificacao, multiple: false, accept:'image/*', :input_html => {:id => 'arquivo_notificacao', :class => 'span6'} %>
+      </div>
+      <br>
+
+      <label class="string optional control-label" for="arquivo_cnh_condutor">Cnh do condutor infrator</label>
+      <div class="controls">        
+        <%= f.file_field :arquivo_cnh_condutor_infrator, multiple: false, accept:'image/*', :input_html => {:id => 'arquivo_cnh_condutor_infrator', :class => 'span6'} %>        
+      </div>
+      <br>
+
+      <label class="string optional control-label" for="arquivo_doc_proprietario">Documento do proprietário (assinatura será verificada)</label>
+      <div class="controls">        
+        <%= f.file_field :arquivo_doc_proprietario, multiple: false, accept:'image/*', :input_html => {:id => 'arquivo_doc_proprietario', :class => 'span6'} %>
+      </div>
+      <br>
+
+      <label class="string optional control-label" for="contrato_social">Contrato social (somente empresas ou locadoras de veículo)</label>
+      
+      <div class="controls">
+        <%= f.file_field :arquivo_contrato_social, multiple: false, accept:'image/*', :input_html => {:id => 'contrato_social', :class => 'span6'} %>        
+      </div>
+      <br>
+      <label class="string optional control-label" for="procuracao">Procuração (quando o proprietario for representado por outra pessoa)</label>
+      <div class="controls">        
+        <%= f.file_field :arquivo_procuracao, multiple: false, accept:'image/*', :input_html => {:id => 'procuracao', :class => 'span6'} %>
+      </div>
+      <br>
+      <label class="string optional control-label" for="contrato_responsabilidade">Contrato de responsabilidade (somente locadoras de veículo)</label>
+      <div class="controls">        
+        <%= f.file_field :arquivo_contrato_responsabilidade, multiple: false, accept:'image/*', :input_html => {:id => 'contrato_responsabilidade', :class => 'span6'} %>
+      </div>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit, 'Enviar' %>
+</div>
+<% end %>

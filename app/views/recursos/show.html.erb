@@ -1,0 +1,38 @@
+<p>
+  <b>Numero auto infracao:</b>
+  <%= @recurso.numero_auto_infracao %>
+</p>
+
+<p>
+  <b>Email para retorno:</b>
+  <%= @recurso.email_para_retorno %>
+</p>
+
+<p>
+  <b>Arquivo notificacao:</b>
+  <%= @recurso.notificacao.to_s %>
+</p>
+
+<p>
+  <b>Arquivo recurso:</b>
+  <%= @recurso.recurso.to_s %>
+</p>
+
+<p>
+  <b>Arquivo cnh:</b>
+  <%= @recurso.cnh.to_s %>
+</p>
+
+<p>
+  <b>Arquivo crlv:</b>
+  <%= @recurso.crlv.to_s %>
+</p>
+
+<p>
+  <b>Arquivo procuracao:</b>
+  <%= @recurso.procuracao.to_s %>
+</p>
+
+
+<%= link_to 'Editar', edit_recurso_path(@recurso) %> |
+<%= link_to 'Voltar', recursos_path %>

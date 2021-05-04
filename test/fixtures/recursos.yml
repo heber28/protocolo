@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numero_auto_infracao: MyString
+  email_para_retorno: MyString
+  arquivo_notificacao: MyString
+  arquivo_recurso: MyString
+  arquivo_cnh: MyString
+  arquivo_crlv: MyString
+  arquivo_procuracao: MyString
+
+two:
+  numero_auto_infracao: MyString
+  email_para_retorno: MyString
+  arquivo_notificacao: MyString
+  arquivo_recurso: MyString
+  arquivo_cnh: MyString
+  arquivo_crlv: MyString
+  arquivo_procuracao: MyString
